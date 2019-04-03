@@ -1,0 +1,21 @@
+appId: APP_5439463B5AA7450EA8D784E4AF70D33C
+deviceId: DEV_E745E51F740E4472AB55D00F3A77163C
+secret: Tqn1zejjneKdpqccW2dVW8fpWjRt40CN
+version: 1.0
+
+signature:
+  address: http://192.168.108.11:8081/cloudsign/v1
+  user-apply-cert: /userApplyCert
+  deposit-cert-sign: /depositCertSign
+  verify-sign: /verifySign
+tss:
+  address: http://192.168.108.11:8081/tss/v1/timestamp
+  gen-ts-req: /genTsReq
+  gen-ts-resp: /genTsResp
+dsvs:
+  address: http://192.168.108.11:8081/dsvs/v1
+  cert-validate: /cert/validate
+file:
+  address: http://192.168.108.11:10019
+  upload: /upload
+  download: /download
