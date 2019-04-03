@@ -13,66 +13,66 @@ import java.io.Serializable;
  * @创建人： july_whj
  * @创建时间：2018/9/5 19:28
  ***************************************************************************/
-public class BaseRequest implements Serializable{
-    /**
-     * 版本（*）
-     */
-    private String version;
-    /**
-     * 签名算法。推荐使用HMAC（HamcSHA256算法）计算HMAC值。
-     * 开放给外部客户调用的接口必须要签名。
-     */
-    private String signAlgo;
-    /**
-     *签名数据。开放给外部客户调用的接口必须要签名。
-     */
-    private String signature;
-    /**
-     * 网关设备ID （*）
-     */
-    private String deviceId;
-    /**
-     * 应用ID （*）
-     */
-    private String appId;
+public class BaseRequest implements Serializable {
 
-    public String getVersion() {
-        return version;
-    }
+  /**
+   * 版本（*）
+   */
+  private String version;
+  /**
+   * 签名算法。推荐使用HMAC（HamcSHA256算法）计算HMAC值。 开放给外部客户调用的接口必须要签名。
+   */
+  private String signAlgo;
+  /**
+   * 签名数据。开放给外部客户调用的接口必须要签名。
+   */
+  private String signature;
+  /**
+   * 网关设备ID （*）
+   */
+  private String deviceId;
+  /**
+   * 应用ID （*）
+   */
+  private String appId;
 
-    public void setVersion(String version) {
-        this.version = version;
-    }
+  public String getVersion() {
+    return version;
+  }
 
-    public String getSignAlgo() {
-        return signAlgo;
-    }
+  public void setVersion(String version) {
+    this.version = version;
+  }
 
-    public void setSignAlgo(String signAlgo) {
-        this.signAlgo = signAlgo;
-    }
+  public String getSignAlgo() {
+    return signAlgo;
+  }
 
-    public String getSignature() {
-        return signature;
-    }
+  public void setSignAlgo(String signAlgo) {
+    this.signAlgo = signAlgo;
+  }
 
-    public void setSignature(String signature) {
-        this.signature = signature;
-    }
+  public String getSignature() {
+    return signature;
+  }
 
-    public String getDeviceId() {
-        return deviceId;
-    }
+  public void setSignature(String signature) {
+    this.signature = signature;
+  }
 
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
+  public String getDeviceId() {
+    return deviceId;
+  }
 
-    public String getAppId() {
-        return appId;
-    }
+  public void setDeviceId(String deviceId) {
+    this.deviceId = deviceId;
+  }
 
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
+  public String getAppId() {
+    return appId;
+  }
+
+  public void setAppId(String appId) {
+    this.appId = appId;
+  }
 }

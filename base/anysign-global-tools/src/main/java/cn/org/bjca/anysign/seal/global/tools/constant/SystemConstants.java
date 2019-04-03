@@ -14,40 +14,40 @@ package cn.org.bjca.anysign.seal.global.tools.constant;
  ***************************************************************************/
 public class SystemConstants {
 
-    /**
-     * 用户目录
-     */
-    public static final String HOMEPATH = System.getProperty("user.home");
-    /**
-     * 文件编码
-     */
-    public static final String ENCODING = "UTF-8";
+  /**
+   * 用户目录
+   */
+  public static final String HOMEPATH = System.getProperty("user.home");
+  /**
+   * 文件编码
+   */
+  public static final String ENCODING = "UTF-8";
 
-    /**
-     * 请求协议版本号
-     */
-    public static final String VERSION_1 = "1.0";
-    /**
-     *请求报文签名算法
-     */
-    public static final String SIGNALGO_HMAC = "HMAC";
-    /**
-     * 签名类型 p1
-     */
-    public static final String SIGNRESULTTYPE_P1 = "P1";
-    /**
-     *签名类型 P7
-     */
-    public static final String SIGNRESULTTYPE_P7 = "P7";
+  /**
+   * 请求协议版本号
+   */
+  public static final String VERSION_1 = "1.0";
+  /**
+   * 请求报文签名算法
+   */
+  public static final String SIGNALGO_HMAC = "HMAC";
+  /**
+   * 签名类型 p1
+   */
+  public static final String SIGNRESULTTYPE_P1 = "P1";
+  /**
+   * 签名类型 P7
+   */
+  public static final String SIGNRESULTTYPE_P7 = "P7";
 
-    /**
-     * 原文类型 HASH
-     */
-    public static final  String DATATYPE_HASH = "HASH";
+  /**
+   * 原文类型 HASH
+   */
+  public static final String DATATYPE_HASH = "HASH";
 
-    /**
-     * 原文类型 PLAIN
-     */
-    public static final  String DATATYPE_PLAIN = "PLAIN";
+  /**
+   * 原文类型 PLAIN
+   */
+  public static final String DATATYPE_PLAIN = "PLAIN";
 
 }

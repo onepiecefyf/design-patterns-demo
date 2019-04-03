@@ -1,6 +1,9 @@
 package cn.org.bjca.anysign.seal.baes;
 
 import cn.org.bjca.anysign.seal.Application;
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +13,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
-import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 
 /***************************************************************************
  * <pre>基础测试</pre>
@@ -32,27 +31,28 @@ import java.net.URLDecoder;
 //@Transactional //打开的话测试之后数据可自动回滚
 public class BaseJunit {
 
-    @Autowired
-    WebApplicationContext webApplicationContext;
+  @Autowired
+  WebApplicationContext webApplicationContext;
 
-    protected MockMvc mockMvc;
-    public String resourcesPath = null;
-    public String outFilePath = null;
+  protected MockMvc mockMvc;
+  public String resourcesPath = null;
+  public String outFilePath = null;
 
-    @Before
-    public void setupMockMvc() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+  @Before
+  public void setupMockMvc() {
+    mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 
-        try {
-            resourcesPath = URLDecoder.decode(this.getClass().getClassLoader().getResource("").getPath(), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        outFilePath = resourcesPath + "out" + File.separator;
+    try {
+      resourcesPath = URLDecoder
+          .decode(this.getClass().getClassLoader().getResource("").getPath(), "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
     }
+    outFilePath = resourcesPath + "out" + File.separator;
+  }
 
-    @Before
-    public void initDatabase() {
-    }
+  @Before
+  public void initDatabase() {
+  }
 
 }

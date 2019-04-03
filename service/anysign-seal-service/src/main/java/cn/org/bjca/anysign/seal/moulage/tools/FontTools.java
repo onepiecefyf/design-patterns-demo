@@ -1,8 +1,12 @@
 package cn.org.bjca.anysign.seal.moulage.tools;
 
-import java.awt.*;
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
 import java.text.Collator;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 
 /***************************************************************************
@@ -18,50 +22,48 @@ import java.util.List;
  ***************************************************************************/
 public class FontTools {
 
-    /**
-     * 获取所有服务器字体
-     *
-     * @return
-     */
-    public static List getAllFont() {
-        List list = new ArrayList();
-        Font[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
-        for (int i = 0; i < fonts.length; i++) {
-            list.add(fonts[i].getFamily());
-        }
-        List array = removeDeuplicate(list);
-        String[] result = new String[array.size()];
-        for (int i = 0; i < array.size(); i++) {
-            result[i] = array.get(i).toString();
-        }
-        //按首字母排序开始
-        Comparator<Object> com = Collator.getInstance(java.util.Locale.CHINA);
-        Arrays.sort(result, com);
-        List font = new ArrayList();
-        for (String i : result) {
-            font.add(i);
-        }
-        //按首字母排序结束
-        return font;
+  /**
+   * 获取所有服务器字体
+   */
+  public static List getAllFont() {
+    List list = new ArrayList();
+    Font[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
+    for (int i = 0; i < fonts.length; i++) {
+      list.add(fonts[i].getFamily());
     }
+    List array = removeDeuplicate(list);
+    String[] result = new String[array.size()];
+    for (int i = 0; i < array.size(); i++) {
+      result[i] = array.get(i).toString();
+    }
+    //按首字母排序开始
+    Comparator<Object> com = Collator.getInstance(java.util.Locale.CHINA);
+    Arrays.sort(result, com);
+    List font = new ArrayList();
+    for (String i : result) {
+      font.add(i);
+    }
+    //按首字母排序结束
+    return font;
+  }
 
 
-    private static List removeDeuplicate(List arlList) {
-        HashSet h = new HashSet(arlList);
-        arlList.clear();
-        arlList.addAll(h);
-        List list = arlList;
-        return list;
-    }
+  private static List removeDeuplicate(List arlList) {
+    HashSet h = new HashSet(arlList);
+    arlList.clear();
+    arlList.addAll(h);
+    List list = arlList;
+    return list;
+  }
 
-    /**
-     * 检查服务器字体支持
-     *
-     * @param fontName 字体名称
-     * @return font
-     */
-    public static Font cheakFont(String fontName) {
-        return new Font(fontName, Font.BOLD, 18);
-    }
+  /**
+   * 检查服务器字体支持
+   *
+   * @param fontName 字体名称
+   * @return font
+   */
+  public static Font cheakFont(String fontName) {
+    return new Font(fontName, Font.BOLD, 18);
+  }
 
 }

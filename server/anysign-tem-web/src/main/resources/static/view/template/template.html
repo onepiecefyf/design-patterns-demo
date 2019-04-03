@@ -2,246 +2,251 @@
 <html lang="en">
 <body class="nav-md">
 <div class="container body">
-    <div class="main_container">
-        <!-- page content -->
-        <div class="right_col" role="main">
-            <div class="">
+  <div class="main_container">
+    <!-- page content -->
+    <div class="right_col" role="main">
+      <div class="">
+        <div class="clearfix"></div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Seal engraving
+                  <small>making tool</small>
+                </h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
                 <div class="clearfix"></div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>Seal engraving
-                                    <small>making tool</small>
-                                </h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Settings 1</a>
-                                            </li>
-                                            <li><a href="#">Settings 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="x_content" ng-controller="imageController">
-                                <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
-                                    <div class="profile_img">
-                                        <div id="crop-avatar">
-                                            <!-- Current avatar -->
-                                            <img style="width: 98%" ng-src="data:image/jpg;base64,{{imageBase64}}"
-                                                 class="img-responsive avatar-view"
-                                                 src="../../images/test2_600.png"
-                                                 alt="Avatar" title="Change the avatar">
-                                        </div>
-                                    </div>
-                                    <h3>The seal style</h3>
-                                    <ul class="list-unstyled user_data">
-                                        <li><i class="fa fa-map-marker user-profile-icon"></i> DAI IS :
-                                            <span style="color: red;">{{template.dpi}}</span>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-briefcase user-profile-icon"></i> Height(cm) :
-                                            <span style="color: red;">{{height | number:2}}</span>
-                                            Width(cm) : <span style="color: red;">{{width | number:2}}</span>
-                                        </li>
-                                        <li class="m-top-xs">
-                                            <i class="fa fa-external-link user-profile-icon"></i>
-                                            <a href="http://www.kimlabs.com/profile/"
-                                               target="_blank">www.kimlabs.com</a>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-primary" ng-click="changeSeal()"><i class="fa fa-edit m-right-xs">
-
-                                    </i>生成模板</a>
-                                    <a class="btn btn-warning"><i class="fa fa-edit m-right-xs"></i>下载模板</a>
-                                    <br>
-                                    <a class="btn btn-success" ng-click="showData()"><i
-                                            class="fa fa-edit m-right-xs"></i>显示数据</a>
-                                    <a class="btn btn-info"><i class="fa fa-edit m-right-xs"></i>模板推送</a>
-
-                                    <br/>
-                                </div>
-                                <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <div class="profile_title">
-                                        <div class="col-md-6">
-                                            <h2>User Activity Report</h2>
-                                        </div>
-                                        <div class="col-md-6">
-
-                                        </div>
-                                    </div>
-                                    <!-- start of user-activity-graph -->
-                                    <div id="template_seal" ng-controller="templateController"
-                                         style="width:100%; height:400px;">
-                                        <form novalidate class="form-horizontal form-label-left input_mask">
-                                            <br>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">模板ID:</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                                    <input type="text" class="form-control" ng-model="template.tempId"
-                                                           placeholder="模板ID">
-                                                </div>
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">形状：</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                                    <select ng-change="dynamicUpdate()" class="form-control" ng-model="template.shapeEnum"
-                                                            placeholder="形状">
-                                                        <option value="circle">circle</option>
-                                                        <option value="ellipse">ellipse</option>
-                                                        <option value="rectangle">rectangle</option>
-                                                        <option value="square">square</option>
-                                                    </select>
-                                                </div>
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">颜色:</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                                    <div id="cp12" class="input-group">
-                                                        <input ng-change="dynamicUpdate()" ng-model ="template.color" id="cp1" type="text"
-                                                               class="form-control"/>
-                                                        <span class="input-group-addon"><i></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">印模高度:</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                    <input type="number" class="form-control" ng-model="template.height"
-                                                           ng-change="dynamicUpdate()" placeholder="印模高度" step="1"
-                                                           oninput="if(value.length>5)
-                                                           value=value.slice(0,5)"
-                                                           ng-change="calculate()" min="1" max="99999">
-                                                </div>
-
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">印模宽度:</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                    <input type="number" class="form-control" ng-model="template.width"
-                                                           ng-change="dynamicUpdate()" placeholder="印模宽度" step="1"
-                                                           oninput="if(value.length>5)
-                                                           value=value.slice(0,5)"
-                                                           min="1" max="99999">
-                                                </div>
-
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">边框厚度:</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                    <input type="number" class="form-control" ng-model="template.stroke"
-                                                           placeholder="边框厚度" step="1" oninput="if(value.length>3)
-                                                           value=value.slice(0,3)"
-                                                           ng-change="dynamicUpdate()" min="1" max="99">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">中心X:</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                    <input type="number" class="form-control"
-                                                           ng-model="template.centerX"
-                                                           placeholder="中心X" step="1" oninput="if(value.length>5)
-                                                           value=value.slice(0,5)"
-                                                           ng-change="dynamicUpdate()" min="1" max="99999">
-                                                </div>
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">中心Y:</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                    <input type="number" class="form-control"
-                                                           ng-model="template.centerY"
-                                                           placeholder="中心Y" step="1" oninput="if(value.length>5)
-                                                           value=value.slice(0,5)"
-                                                           ng-change="dynamicUpdate()" min="1" max="99999">
-                                                </div>
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">DPI:</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                    <input type="number" class="form-control"
-                                                           ng-model="template.dpi"
-                                                           placeholder="DPI" step="1" oninput="if(value.length>5)
-                                                           value=value.slice(0,5)"
-                                                           ng-change="dynamicUpdate()" min="1" max="99999">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">长半轴：</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                    <input type="number" class="form-control" ng-model="template.rx"
-                                                           placeholder="长半轴" step="1" oninput="if(value.length>5)
-                                                           value=value.slice(0,5)"
-                                                           ng-change="dynamicUpdate()" min="1" max="99999">
-                                                </div>
-                                                <label class="control-label col-md-1 col-sm-1 col-xs-12">短半轴：</label>
-                                                <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                    <input type="number" class="form-control" ng-model="template.ry"
-                                                           placeholder="短半轴" step="1" oninput="if(value.length>5)
-                                                           value=value.slice(0,5)"
-                                                           ng-change="dynamicUpdate()" min="1" max="99999">
-                                                </div>
-                                            </div>
-
-                                            <ul class="nav nav-list">
-                                                <li class="divider">附文信息</li>
-                                            </ul>
-                                            <a class="btn" ng-click="addRider()">
-                                                <i class="fa fa-plus"></i>
-                                            </a>
-                                            <div id="container">
-                                                <div class="form-group" ng-repeat="rider in riders">
-                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12 rider">索引</label>
-                                                    <div class="col-md-1 col-sm-1 col-xs-12">
-                                                        <input type="number" class="form-control"
-                                                               ng-model="rider.order"
-                                                               placeholder="索引" step="1">
-                                                    </div>
-                                                    <label ng-click="open()" class="control-label col-md-1 col-sm-1 col-xs-12 rider">附文</label>
-                                                    <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                        <input type="text" class="form-control"
-                                                               ng-model="rider.appendixContent" ng-change="dynamicUpdate()"
-                                                               placeholder="附文" step="1">
-                                                    </div>
-                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12 rider">弧度</label>
-                                                    <div class="col-md-2 col-sm-2 col-xs-12 ">
-                                                        <input type="text" class="form-control" ng-model="rider.radian"
-                                                               ng-change="dynamicUpdate()" placeholder="弧度" step="1">
-                                                    </div>
-                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12 rider">加粗</label>
-                                                    <div class="col-md-1 col-sm-1 col-xs-12 ">
-                                                        <input type="text" class="form-control"
-                                                               ng-change="dynamicUpdate()" ng-model="rider.fontWeight"
-                                                               placeholder="加粗" step="1">
-                                                    </div>
-                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12 rider">字体</label>
-                                                    <div class="col-md-1 col-sm-1 col-xs-12 ">
-                                                        <select type="text" class="form-control" ng-change="dynamicUpdate()"
-                                                                ng-model="rider.fd">
-                                                            <option value="KaiTi">楷体</option>
-                                                            <option value="公章刻章字体">公章刻章字体</option>
-                                                        </select>
-                                                    </div>
-                                                    <label class="control-label col-md-1 col-sm-1 col-xs-12 rider">Size</label>
-                                                    <div class="col-md-1 col-sm-1 col-xs-12 ">
-                                                        <input type="number" class="form-control"
-                                                               ng-model="rider.fontSize" ng-change="dynamicUpdate()"
-                                                               placeholder="size" step="1">
-                                                    </div>
-                                                    <a class="btn"  ng-click="delRider($index)">
-                                                        <i class="fa fa-minus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              </div>
+              <div class="x_content" ng-controller="imageController">
+                <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                  <div class="profile_img">
+                    <div id="crop-avatar">
+                      <!-- Current avatar -->
+                      <img style="width: 98%" ng-src="data:image/jpg;base64,{{imageBase64}}"
+                           class="img-responsive avatar-view"
+                           src="../../images/test2_600.png"
+                           alt="Avatar" title="Change the avatar">
                     </div>
+                  </div>
+                  <h3>The seal style</h3>
+                  <ul class="list-unstyled user_data">
+                    <li><i class="fa fa-map-marker user-profile-icon"></i> DAI IS :
+                      <span style="color: red;">{{template.dpi}}</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-briefcase user-profile-icon"></i> Height(cm) :
+                      <span style="color: red;">{{height | number:2}}</span>
+                      Width(cm) : <span style="color: red;">{{width | number:2}}</span>
+                    </li>
+                    <li class="m-top-xs">
+                      <i class="fa fa-external-link user-profile-icon"></i>
+                      <a href="http://www.kimlabs.com/profile/"
+                         target="_blank">www.kimlabs.com</a>
+                    </li>
+                  </ul>
+                  <a class="btn btn-primary" ng-click="changeSeal()"><i
+                      class="fa fa-edit m-right-xs">
+
+                  </i>生成模板</a>
+                  <a class="btn btn-warning"><i class="fa fa-edit m-right-xs"></i>下载模板</a>
+                  <br>
+                  <a class="btn btn-success" ng-click="showData()"><i
+                      class="fa fa-edit m-right-xs"></i>显示数据</a>
+                  <a class="btn btn-info"><i class="fa fa-edit m-right-xs"></i>模板推送</a>
+
+                  <br/>
                 </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <div class="profile_title">
+                    <div class="col-md-6">
+                      <h2>User Activity Report</h2>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                  </div>
+                  <!-- start of user-activity-graph -->
+                  <div id="template_seal" ng-controller="templateController"
+                       style="width:100%; height:400px;">
+                    <form novalidate class="form-horizontal form-label-left input_mask">
+                      <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">模板ID:</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                          <input type="text" class="form-control" ng-model="template.tempId"
+                                 placeholder="模板ID">
+                        </div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">形状：</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                          <select ng-change="dynamicUpdate()" class="form-control"
+                                  ng-model="template.shapeEnum"
+                                  placeholder="形状">
+                            <option value="circle">circle</option>
+                            <option value="ellipse">ellipse</option>
+                            <option value="rectangle">rectangle</option>
+                            <option value="square">square</option>
+                          </select>
+                        </div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">颜色:</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                          <div id="cp12" class="input-group">
+                            <input ng-change="dynamicUpdate()" ng-model="template.color" id="cp1"
+                                   type="text"
+                                   class="form-control"/>
+                            <span class="input-group-addon"><i></i></span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">印模高度:</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12 ">
+                          <input type="number" class="form-control" ng-model="template.height"
+                                 ng-change="dynamicUpdate()" placeholder="印模高度" step="1"
+                                 oninput="if(value.length>5){value=value.slice(0,5)
+}"
+                                 ng-change="calculate()" min="1" max="99999">
+                        </div>
+
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">印模宽度:</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12 ">
+                          <input type="number" class="form-control" ng-model="template.width"
+                                 ng-change="dynamicUpdate()" placeholder="印模宽度" step="1"
+                                 oninput="if(value.length>5){value=value.slice(0,5)
+}"
+                                 min="1" max="99999">
+                        </div>
+
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">边框厚度:</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12 ">
+                          <input type="number" class="form-control" ng-model="template.stroke"
+                                 placeholder="边框厚度" step="1" oninput="if(value.length>3){value=value.slice(0,3)
+}"
+                                 ng-change="dynamicUpdate()" min="1" max="99">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">中心X:</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12 ">
+                          <input type="number" class="form-control"
+                                 ng-model="template.centerX"
+                                 placeholder="中心X" step="1" oninput="if(value.length>5){value=value.slice(0,5)
+}"
+                                 ng-change="dynamicUpdate()" min="1" max="99999">
+                        </div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">中心Y:</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12 ">
+                          <input type="number" class="form-control"
+                                 ng-model="template.centerY"
+                                 placeholder="中心Y" step="1" oninput="if(value.length>5){value=value.slice(0,5)
+}"
+                                 ng-change="dynamicUpdate()" min="1" max="99999">
+                        </div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">DPI:</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12 ">
+                          <input type="number" class="form-control"
+                                 ng-model="template.dpi"
+                                 placeholder="DPI" step="1" oninput="if(value.length>5){value=value.slice(0,5)
+}"
+                                 ng-change="dynamicUpdate()" min="1" max="99999">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">长半轴：</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12 ">
+                          <input type="number" class="form-control" ng-model="template.rx"
+                                 placeholder="长半轴" step="1" oninput="if(value.length>5){value=value.slice(0,5)
+}"
+                                 ng-change="dynamicUpdate()" min="1" max="99999">
+                        </div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12">短半轴：</label>
+                        <div class="col-md-2 col-sm-2 col-xs-12 ">
+                          <input type="number" class="form-control" ng-model="template.ry"
+                                 placeholder="短半轴" step="1" oninput="if(value.length>5){value=value.slice(0,5)
+}"
+                                 ng-change="dynamicUpdate()" min="1" max="99999">
+                        </div>
+                      </div>
+
+                      <ul class="nav nav-list">
+                        <li class="divider">附文信息</li>
+                      </ul>
+                      <a class="btn" ng-click="addRider()">
+                        <i class="fa fa-plus"></i>
+                      </a>
+                      <div id="container">
+                        <div class="form-group" ng-repeat="rider in riders">
+                          <label class="control-label col-md-1 col-sm-1 col-xs-12 rider">索引</label>
+                          <div class="col-md-1 col-sm-1 col-xs-12">
+                            <input type="number" class="form-control"
+                                   ng-model="rider.order"
+                                   placeholder="索引" step="1">
+                          </div>
+                          <label ng-click="open()"
+                                 class="control-label col-md-1 col-sm-1 col-xs-12 rider">附文</label>
+                          <div class="col-md-2 col-sm-2 col-xs-12 ">
+                            <input type="text" class="form-control"
+                                   ng-model="rider.appendixContent" ng-change="dynamicUpdate()"
+                                   placeholder="附文" step="1">
+                          </div>
+                          <label class="control-label col-md-1 col-sm-1 col-xs-12 rider">弧度</label>
+                          <div class="col-md-2 col-sm-2 col-xs-12 ">
+                            <input type="text" class="form-control" ng-model="rider.radian"
+                                   ng-change="dynamicUpdate()" placeholder="弧度" step="1">
+                          </div>
+                          <label class="control-label col-md-1 col-sm-1 col-xs-12 rider">加粗</label>
+                          <div class="col-md-1 col-sm-1 col-xs-12 ">
+                            <input type="text" class="form-control"
+                                   ng-change="dynamicUpdate()" ng-model="rider.fontWeight"
+                                   placeholder="加粗" step="1">
+                          </div>
+                          <label class="control-label col-md-1 col-sm-1 col-xs-12 rider">字体</label>
+                          <div class="col-md-1 col-sm-1 col-xs-12 ">
+                            <select type="text" class="form-control" ng-change="dynamicUpdate()"
+                                    ng-model="rider.fd">
+                              <option value="KaiTi">楷体</option>
+                              <option value="公章刻章字体">公章刻章字体</option>
+                            </select>
+                          </div>
+                          <label
+                              class="control-label col-md-1 col-sm-1 col-xs-12 rider">Size</label>
+                          <div class="col-md-1 col-sm-1 col-xs-12 ">
+                            <input type="number" class="form-control"
+                                   ng-model="rider.fontSize" ng-change="dynamicUpdate()"
+                                   placeholder="size" step="1">
+                          </div>
+                          <a class="btn" ng-click="delRider($index)">
+                            <i class="fa fa-minus"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 </body>
 </html>

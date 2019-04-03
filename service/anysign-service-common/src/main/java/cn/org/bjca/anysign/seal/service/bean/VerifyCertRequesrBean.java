@@ -20,55 +20,56 @@ import lombok.Setter;
 @Setter
 @Getter
 public class VerifyCertRequesrBean {
-    /**
-     * 业务ID
-     */
-    @Setter
-    @Getter
-    @NonNull
-    private String transId;
-    /**
-     * appId
-     */
-    @Setter
-    @Getter
-    @NonNull
-    private String appId;
-    /**
-     * base64Cert
-     */
-    @Setter
-    @Getter
-    @NonNull
-    private String base64Cert;
-    /**
-     * 证书的策略Id
-     */
-    @Setter
-    @Getter
-    private String verifyCertPolicyId;
 
-    public JSONObject toJSONString() {
-        return JSONObject.parseObject(JSON.toJSONString(this));
-    }
+  /**
+   * 业务ID
+   */
+  @Setter
+  @Getter
+  @NonNull
+  private String transId;
+  /**
+   * appId
+   */
+  @Setter
+  @Getter
+  @NonNull
+  private String appId;
+  /**
+   * base64Cert
+   */
+  @Setter
+  @Getter
+  @NonNull
+  private String base64Cert;
+  /**
+   * 证书的策略Id
+   */
+  @Setter
+  @Getter
+  private String verifyCertPolicyId;
 
-    /**
-     * VerifyCertRequesrBean 构建
-     *
-     * @param appId              appId
-     * @param base64Cert         证书base64
-     * @param transId            业务ID
-     * @param verifyCertPolicyId 证书策略
-     * @return
-     */
-    public static VerifyCertRequesrBean build(String appId, String base64Cert, String transId, String verifyCertPolicyId) {
-        VerifyCertRequesrBean verifyCertRequesrBean = new VerifyCertRequesrBean();
-        verifyCertRequesrBean.setAppId(appId);
-        verifyCertRequesrBean.setTransId(transId);
-        verifyCertRequesrBean.setBase64Cert(base64Cert);
-        verifyCertRequesrBean.setVerifyCertPolicyId(verifyCertPolicyId);
-        return verifyCertRequesrBean;
-    }
+  public JSONObject toJSONString() {
+    return JSONObject.parseObject(JSON.toJSONString(this));
+  }
+
+  /**
+   * VerifyCertRequesrBean 构建
+   *
+   * @param appId appId
+   * @param base64Cert 证书base64
+   * @param transId 业务ID
+   * @param verifyCertPolicyId 证书策略
+   */
+  public static VerifyCertRequesrBean build(String appId, String base64Cert, String transId,
+      String verifyCertPolicyId) {
+    VerifyCertRequesrBean verifyCertRequesrBean = new VerifyCertRequesrBean();
+    verifyCertRequesrBean.setAppId(appId);
+    verifyCertRequesrBean.setTransId(transId);
+    verifyCertRequesrBean.setBase64Cert(base64Cert);
+    verifyCertRequesrBean.setVerifyCertPolicyId(verifyCertPolicyId);
+    return verifyCertRequesrBean;
+  }
 
 
 }

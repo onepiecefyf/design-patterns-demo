@@ -13,53 +13,54 @@ import java.io.Serializable;
  * @创建人： july_whj
  * @创建时间：2018/9/7 14:20
  ***************************************************************************/
-public class RidersBean implements Serializable{
-    /**
-     * 附文(*)
-     */
-    private String appendixContent;
-    /**
-     * 弧度(*)
-     */
-    private String radian;
-    /**
-     * 加粗(*)
-     */
-    private Boolean fontWeight;
-    /**
-     * 字体大小(*)
-     */
-    private float fontSize;
+public class RidersBean implements Serializable {
 
-    public String getAppendixContent() {
-        return appendixContent;
-    }
+  /**
+   * 附文(*)
+   */
+  private String appendixContent;
+  /**
+   * 弧度(*)
+   */
+  private String radian;
+  /**
+   * 加粗(*)
+   */
+  private Boolean fontWeight;
+  /**
+   * 字体大小(*)
+   */
+  private float fontSize;
 
-    public void setAppendixContent(String appendixContent) {
-        this.appendixContent = appendixContent;
-    }
+  public String getAppendixContent() {
+    return appendixContent;
+  }
 
-    public String getRadian() {
-        return radian;
-    }
+  public void setAppendixContent(String appendixContent) {
+    this.appendixContent = appendixContent;
+  }
 
-    public void setRadian(String radian) {
-        this.radian = radian;
-    }
+  public String getRadian() {
+    return radian;
+  }
 
-    public Boolean getFontWeight() {
-        return fontWeight;
-    }
+  public void setRadian(String radian) {
+    this.radian = radian;
+  }
 
-    public void setFontWeight(Boolean fontWeight) {
-        this.fontWeight = fontWeight;
-    }
+  public Boolean getFontWeight() {
+    return fontWeight;
+  }
 
-    public 	float getFontSize() {
-        return fontSize;
-    }
+  public void setFontWeight(Boolean fontWeight) {
+    this.fontWeight = fontWeight;
+  }
 
-    public void setFontSize(float fontSize) {
-        this.fontSize = fontSize;
-    }
+  public float getFontSize() {
+    return fontSize;
+  }
+
+  public void setFontSize(float fontSize) {
+    this.fontSize = fontSize;
+  }
 }

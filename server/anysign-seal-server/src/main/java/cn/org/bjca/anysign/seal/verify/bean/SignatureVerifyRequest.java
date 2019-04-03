@@ -4,10 +4,6 @@ package cn.org.bjca.anysign.seal.verify.bean;
 import cn.org.bjca.anysign.seal.server.common.message.BaseRequest;
 import cn.org.bjca.anysign.seal.service.bean.enumpackage.Alg;
 import cn.org.bjca.anysign.seal.service.bean.enumpackage.FileTransmissionType;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.io.Serializable;
 
 /**
@@ -17,80 +13,81 @@ import java.io.Serializable;
  */
 
 public class SignatureVerifyRequest extends BaseRequest implements Serializable {
-    /**
-     * 交易参考号
-     */
-    private String transId;
-    /**
-     * 文档传输类型
-     */
-    private FileTransmissionType fileTransmissionType;
 
-    /**
-     * 请求文件下载token
-     */
-    private String requestFileToken;
+  /**
+   * 交易参考号
+   */
+  private String transId;
+  /**
+   * 文档传输类型
+   */
+  private FileTransmissionType fileTransmissionType;
 
-    /**
-     * 请求文件id
-     */
-    private String requestFileId;
+  /**
+   * 请求文件下载token
+   */
+  private String requestFileToken;
 
-    /**
-     * 文件base64编码
-     */
-    private String requestFileContent;
+  /**
+   * 请求文件id
+   */
+  private String requestFileId;
 
-    /**
-     * 签名密钥算法
-     */
-    private Alg alg;
+  /**
+   * 文件base64编码
+   */
+  private String requestFileContent;
 
-    public String getTransId() {
-        return transId;
-    }
+  /**
+   * 签名密钥算法
+   */
+  private Alg alg;
 
-    public void setTransId(String transId) {
-        this.transId = transId;
-    }
+  public String getTransId() {
+    return transId;
+  }
 
-    public FileTransmissionType getFileTransmissionType() {
-        return fileTransmissionType;
-    }
+  public void setTransId(String transId) {
+    this.transId = transId;
+  }
 
-    public void setFileTransmissionType(FileTransmissionType fileTransmissionType) {
-        this.fileTransmissionType = fileTransmissionType;
-    }
+  public FileTransmissionType getFileTransmissionType() {
+    return fileTransmissionType;
+  }
 
-    public String getRequestFileToken() {
-        return requestFileToken;
-    }
+  public void setFileTransmissionType(FileTransmissionType fileTransmissionType) {
+    this.fileTransmissionType = fileTransmissionType;
+  }
 
-    public void setRequestFileToken(String requestFileToken) {
-        this.requestFileToken = requestFileToken;
-    }
+  public String getRequestFileToken() {
+    return requestFileToken;
+  }
 
-    public String getRequestFileId() {
-        return requestFileId;
-    }
+  public void setRequestFileToken(String requestFileToken) {
+    this.requestFileToken = requestFileToken;
+  }
 
-    public void setRequestFileId(String requestFileId) {
-        this.requestFileId = requestFileId;
-    }
+  public String getRequestFileId() {
+    return requestFileId;
+  }
 
-    public String getRequestFileContent() {
-        return requestFileContent;
-    }
+  public void setRequestFileId(String requestFileId) {
+    this.requestFileId = requestFileId;
+  }
 
-    public void setRequestFileContent(String requestFileContent) {
-        this.requestFileContent = requestFileContent;
-    }
+  public String getRequestFileContent() {
+    return requestFileContent;
+  }
 
-    public Alg getAlg() {
-        return alg;
-    }
+  public void setRequestFileContent(String requestFileContent) {
+    this.requestFileContent = requestFileContent;
+  }
 
-    public void setAlg(Alg alg) {
-        this.alg = alg;
-    }
+  public Alg getAlg() {
+    return alg;
+  }
+
+  public void setAlg(Alg alg) {
+    this.alg = alg;
+  }
 }

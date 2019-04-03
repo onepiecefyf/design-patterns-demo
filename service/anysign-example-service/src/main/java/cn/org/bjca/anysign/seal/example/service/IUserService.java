@@ -16,9 +16,10 @@ import org.apache.ibatis.annotations.Param;
  * @创建时间：2018/9/9 17:31
  ***************************************************************************/
 public interface IUserService extends IService<User> {
-    /**
-     * 通过账号获取用户
-     */
-    User getByAccount(@Param("account") String account);
+
+  /**
+   * 通过账号获取用户
+   */
+  User getByAccount(@Param("account") String account);
 
 }

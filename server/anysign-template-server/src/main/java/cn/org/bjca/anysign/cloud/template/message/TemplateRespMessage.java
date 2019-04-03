@@ -15,36 +15,42 @@ import java.io.Serializable;
  ***************************************************************************/
 public class TemplateRespMessage implements Serializable {
 
-    /** 交易参考号 必填*/
-    private String transId;
+  /**
+   * 交易参考号 必填
+   */
+  private String transId;
 
-    /** pdf文档文件id*/
-    private String fileId;
+  /**
+   * pdf文档文件id
+   */
+  private String fileId;
 
-    /** pdf文档的base64编码*/
-    private String fileContent;
+  /**
+   * pdf文档的base64编码
+   */
+  private String fileContent;
 
-    public String getTransId() {
-        return transId;
-    }
+  public String getTransId() {
+    return transId;
+  }
 
-    public void setTransId(String transId) {
-        this.transId = transId;
-    }
+  public void setTransId(String transId) {
+    this.transId = transId;
+  }
 
-    public String getFileId() {
-        return fileId;
-    }
+  public String getFileId() {
+    return fileId;
+  }
 
-    public void setFileId(String fileId) {
-        this.fileId = fileId;
-    }
+  public void setFileId(String fileId) {
+    this.fileId = fileId;
+  }
 
-    public String getFileContent() {
-        return fileContent;
-    }
+  public String getFileContent() {
+    return fileContent;
+  }
 
-    public void setFileContent(String fileContent) {
-        this.fileContent = fileContent;
-    }
+  public void setFileContent(String fileContent) {
+    this.fileContent = fileContent;
+  }
 }

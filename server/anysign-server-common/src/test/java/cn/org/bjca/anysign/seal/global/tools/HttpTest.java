@@ -23,27 +23,28 @@ import org.springframework.web.client.RestTemplate;
 public class HttpTest {
 
 
-    private final static String url = "http://localhost:8080/";
+  private final static String url = "http://localhost:8080/";
 
-    private static RestTemplate restTemplate = new RestTemplate();
+  private static RestTemplate restTemplate = new RestTemplate();
 
-    @Test
-    public void test() {
-        ResponseEntity<String> response = restTemplate.exchange(url + "json",
-                HttpMethod.GET,
-                new HttpEntity(null),
-                String.class);
-        System.out.println("result: " + response.getBody());
-    }
+  @Test
+  public void test() {
+    ResponseEntity<String> response = restTemplate.exchange(url + "json",
+        HttpMethod.GET,
+        new HttpEntity(null),
+        String.class);
+    System.out.println("result: " + response.getBody());
+  }
 
-    @Test
-    public void ex(){
-        ResponseEntity<String> response = restTemplate.exchange(url + "ex?version=1.0&deviceId=11&appId=ew",
-                HttpMethod.GET,
-                new HttpEntity(null),
-                String.class);
-        System.out.println("result: " + response.getBody());
-    }
+  @Test
+  public void ex() {
+    ResponseEntity<String> response = restTemplate
+        .exchange(url + "ex?version=1.0&deviceId=11&appId=ew",
+            HttpMethod.GET,
+            new HttpEntity(null),
+            String.class);
+    System.out.println("result: " + response.getBody());
+  }
 
 
 }

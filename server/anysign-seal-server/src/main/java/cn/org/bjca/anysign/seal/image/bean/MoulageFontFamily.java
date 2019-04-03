@@ -11,38 +11,38 @@ package cn.org.bjca.anysign.seal.image.bean;
  * @创建人： july_whj
  * @创建时间：2018/9/11 19:56
  ***************************************************************************/
-public enum  MoulageFontFamily {
-    /**
-     * 长仿宋
-     */
-    LONGFANGSONG,
-    /**
-     * 宋体
-     */
-    SIMSUN,
-    /**
-     * 	仿宋
-     */
-    FANGSONG,
-    /**
-     * 新宋体
-     */
-    NSIMSUN,
-    /**
-     * 华文行楷
-     */
-    STXINGKAI,
-    /**
-     * 楷体
-     */
-    KAITI,
-    /**
-     * 隶书
-     */
-    LISU,
-    /**
-     * 	微软雅黑
-     */
-    MSYH
+public enum MoulageFontFamily {
+  /**
+   * 长仿宋
+   */
+  LONGFANGSONG,
+  /**
+   * 宋体
+   */
+  SIMSUN,
+  /**
+   * 仿宋
+   */
+  FANGSONG,
+  /**
+   * 新宋体
+   */
+  NSIMSUN,
+  /**
+   * 华文行楷
+   */
+  STXINGKAI,
+  /**
+   * 楷体
+   */
+  KAITI,
+  /**
+   * 隶书
+   */
+  LISU,
+  /**
+   * 微软雅黑
+   */
+  MSYH
 
 }

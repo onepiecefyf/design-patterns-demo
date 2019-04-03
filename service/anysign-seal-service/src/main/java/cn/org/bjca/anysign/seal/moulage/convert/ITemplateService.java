@@ -16,33 +16,36 @@ import cn.org.bjca.anysign.seal.moulage.bean.TemplateBean;
  * @创建时间：2018/9/29 18:39
  ***************************************************************************/
 public interface ITemplateService {
-    /**
-     * 模板数据持久化
-     *
-     * @param templateBean 模板数据
-     */
-    void templatePersistence(TemplateBean templateBean);
 
-    /**
-     * 读取模板数据
-     * @param template 模板ID及其附文信息
-     * @return
-     */
-    TemplateBean readTemplateById(Template template);
+  /**
+   * 模板数据持久化
+   *
+   * @param templateBean 模板数据
+   */
+  void templatePersistence(TemplateBean templateBean);
 
-    /**
-     * 删除模板
-     * @param templateId 模板ID
-     */
-    void delTemplateById(String templateId);
+  /**
+   * 读取模板数据
+   *
+   * @param template 模板ID及其附文信息
+   */
+  TemplateBean readTemplateById(Template template);
 
-    /**
-     * 更新模板数据
-     */
-    void updateTemplateById(TemplateBean templateBean);
-    /**
-     * 刷新数据到内存
-     */
-    void templateRefresh();
+  /**
+   * 删除模板
+   *
+   * @param templateId 模板ID
+   */
+  void delTemplateById(String templateId);
+
+  /**
+   * 更新模板数据
+   */
+  void updateTemplateById(TemplateBean templateBean);
+
+  /**
+   * 刷新数据到内存
+   */
+  void templateRefresh();
 
 }

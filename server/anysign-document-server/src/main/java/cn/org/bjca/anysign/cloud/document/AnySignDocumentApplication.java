@@ -20,8 +20,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(value = "cn.org.bjca.anysign")
 public class AnySignDocumentApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(AnySignDocumentApplication.class, args);
-        MetricsLoggerFactory.init();
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(AnySignDocumentApplication.class, args);
+    MetricsLoggerFactory.init();
+  }
 }

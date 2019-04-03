@@ -12,6 +12,6 @@ package cn.org.bjca.anysign.cloud.document.enumeration;
  * @创建时间: 2018/9/18 14:18
  ***************************************************************************/
 public enum Convert2PicScopeType {
-    ALL,
-    PART
+  ALL,
+  PART
 }

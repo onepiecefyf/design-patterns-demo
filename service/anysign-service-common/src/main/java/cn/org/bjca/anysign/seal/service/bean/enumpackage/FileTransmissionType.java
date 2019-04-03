@@ -12,12 +12,12 @@ package cn.org.bjca.anysign.seal.service.bean.enumpackage;
  * @创建时间：2018/9/11 20:02
  ***************************************************************************/
 public enum FileTransmissionType {
-    /**
-     * 路径
-     */
-    PATH,
-    /**
-     * base64
-     */
-    CONTENT
+  /**
+   * 路径
+   */
+  PATH,
+  /**
+   * base64
+   */
+  CONTENT
 }

@@ -24,12 +24,12 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class TemplateRunner implements CommandLineRunner {
 
-    @Autowired
-    private ITemplateService templateService;
+  @Autowired
+  private ITemplateService templateService;
 
-    @Override
-    public void run(String... strings) throws Exception {
-        templateService.templateRefresh();
-        log.info("Template data loaded successfully...");
-    }
+  @Override
+  public void run(String... strings) throws Exception {
+    templateService.templateRefresh();
+    log.info("Template data loaded successfully...");
+  }
 }

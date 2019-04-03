@@ -16,59 +16,59 @@ import lombok.Setter;
  ***************************************************************************/
 public class DocumentFormatBean {
 
-    /**
-     * 源文件Bty
-     */
-    @Getter
-    @Setter
-    private byte[] sourceFileBty;
+  /**
+   * 源文件Bty
+   */
+  @Getter
+  @Setter
+  private byte[] sourceFileBty;
 
-    /**
-     * 目标文件类型
-     */
-    @Getter
-    @Setter
-    private String targetFileType;
+  /**
+   * 目标文件类型
+   */
+  @Getter
+  @Setter
+  private String targetFileType;
 
-    /**
-     * 图片起始
-     */
-    @Getter
-    @Setter
-    private int startIndex;
+  /**
+   * 图片起始
+   */
+  @Getter
+  @Setter
+  private int startIndex;
 
-    /**
-     * 图片结束
-     */
-    @Getter
-    @Setter
-    private int endIndex;
+  /**
+   * 图片结束
+   */
+  @Getter
+  @Setter
+  private int endIndex;
 
-    /**
-     * 是否判断范围
-     */
-    @Getter
-    @Setter
-    boolean judgeScope;
+  /**
+   * 是否判断范围
+   */
+  @Getter
+  @Setter
+  boolean judgeScope;
 
-    /**
-     * 图片类型
-     */
-    @Getter
-    @Setter
-    String imgType;
+  /**
+   * 图片类型
+   */
+  @Getter
+  @Setter
+  String imgType;
 
-    /**
-     * 图片合并类型   1：横向  2：纵向
-     */
-    @Getter
-    @Setter
-    int imgMergeType;
+  /**
+   * 图片合并类型   1：横向  2：纵向
+   */
+  @Getter
+  @Setter
+  int imgMergeType;
 
-    /**
-     * html宽度，默认1000
-     */
-    @Getter
-    @Setter
-    int htmlWidth = 1000;
+  /**
+   * html宽度，默认1000
+   */
+  @Getter
+  @Setter
+  int htmlWidth = 1000;
 }

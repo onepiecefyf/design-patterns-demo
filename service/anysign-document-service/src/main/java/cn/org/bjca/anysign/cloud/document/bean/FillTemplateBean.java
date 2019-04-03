@@ -1,9 +1,9 @@
 package cn.org.bjca.anysign.cloud.document.bean;
 
 import cn.org.bjca.seal.esspdf.bean.ImageAppearanceBean;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
-import java.util.List;
 
 /***************************************************************************
  * <pre></pre>
@@ -18,15 +18,15 @@ import java.util.List;
  ***************************************************************************/
 public class FillTemplateBean {
 
-    @Getter
-    @Setter
-    private byte[] docxBty;
+  @Getter
+  @Setter
+  private byte[] docxBty;
 
-    @Getter
-    @Setter
-    private byte[] xmlBty;
+  @Getter
+  @Setter
+  private byte[] xmlBty;
 
-    @Getter
-    @Setter
-    private List<ImageAppearanceBean> imageAppearanceBeanList;
+  @Getter
+  @Setter
+  private List<ImageAppearanceBean> imageAppearanceBeanList;
 }

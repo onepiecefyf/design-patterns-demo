@@ -1,11 +1,10 @@
 package cn.org.bjca.anysign.seal.moulage.bean;
 
 import cn.org.bjca.anysign.seal.service.bean.base.CommonRequestParam;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.io.Serializable;
 import java.util.Map;
+import lombok.Getter;
+import lombok.Setter;
 
 /***************************************************************************
  * <pre>模板请求对象</pre>
@@ -21,18 +20,17 @@ import java.util.Map;
  ***************************************************************************/
 public class Template extends CommonRequestParam implements Serializable {
 
-    /**
-     * 模板编号
-     */
-    @Setter
-    @Getter
-    private String tempId;
-    /**
-     * 附文信息
-     * integer 为附文顺序
-     */
-    @Setter
-    @Getter
-    private Map<String, String> rider;
+  /**
+   * 模板编号
+   */
+  @Setter
+  @Getter
+  private String tempId;
+  /**
+   * 附文信息 integer 为附文顺序
+   */
+  @Setter
+  @Getter
+  private Map<String, String> rider;
 
 }

@@ -13,22 +13,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServerName implements EnvironmentAware {
 
-    private Environment environment;
+  private Environment environment;
 
-    RelaxedPropertyResolver springPropertyResolver = null;
+  RelaxedPropertyResolver springPropertyResolver = null;
 
-    @Override
-    public void setEnvironment(Environment environment) {
-        this.environment = environment;
-        springPropertyResolver = new RelaxedPropertyResolver(environment, "spring.application.");
-    }
+  @Override
+  public void setEnvironment(Environment environment) {
+    this.environment = environment;
+    springPropertyResolver = new RelaxedPropertyResolver(environment, "spring.application.");
+  }
 
-    /**
-     * 获取服务名称
-     *
-     * @return 服务名称
-     */
-    public String getServerName() {
-        return springPropertyResolver.getProperty("name");
-    }
+  /**
+   * 获取服务名称
+   *
+   * @return 服务名称
+   */
+  public String getServerName() {
+    return springPropertyResolver.getProperty("name");
+  }
 }

@@ -1,10 +1,9 @@
 package cn.org.bjca.anysign.seal.signature.bean;
 
+import java.io.Serializable;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.io.Serializable;
 
 /**
  * @author zjgao
@@ -15,6 +14,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class PdfDigest implements Serializable {
-    private byte[] hash;
-    private byte[] pdfBty;
+
+  private byte[] hash;
+  private byte[] pdfBty;
 }

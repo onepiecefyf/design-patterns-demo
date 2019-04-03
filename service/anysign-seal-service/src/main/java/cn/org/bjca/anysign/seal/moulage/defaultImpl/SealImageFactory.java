@@ -17,18 +17,18 @@ import cn.org.bjca.anysign.seal.moulage.bean.SealImageBean;
  ***************************************************************************/
 public class SealImageFactory {
 
-    public static byte[] creatSealImage(SealImageBean sealImageBean) {
-        switch (sealImageBean.getShape()) {
-            case circle:
-                return SealImageCircle.creatCircle(sealImageBean);
-            case rectangle:
-                return SealImageRectangle.creatRectangle(sealImageBean);
-            case ellipse:
-                return SealImageEllipse.creatEllipse(sealImageBean);
-            default:
-                return null;
-        }
+  public static byte[] creatSealImage(SealImageBean sealImageBean) {
+    switch (sealImageBean.getShape()) {
+      case circle:
+        return SealImageCircle.creatCircle(sealImageBean);
+      case rectangle:
+        return SealImageRectangle.creatRectangle(sealImageBean);
+      case ellipse:
+        return SealImageEllipse.creatEllipse(sealImageBean);
+      default:
+        return null;
     }
+  }
 
 
 }

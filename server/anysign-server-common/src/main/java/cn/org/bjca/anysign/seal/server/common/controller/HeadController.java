@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HeadController {
-    @RequestMapping(value = "/head")
-    public String head() {
-        return "200";
-    }
+
+  @RequestMapping(value = "/head")
+  public String head() {
+    return "200";
+  }
 }

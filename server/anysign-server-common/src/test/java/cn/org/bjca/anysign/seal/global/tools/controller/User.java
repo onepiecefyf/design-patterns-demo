@@ -14,55 +14,55 @@ import java.util.List;
  * @创建人： july_whj
  * @创建时间：2018/9/5 19:03
  ***************************************************************************/
-public class User implements Serializable{
+public class User implements Serializable {
 
-    private String userName;
+  private String userName;
 
-    private String phone;
+  private String phone;
 
-    private List<User> userList;
+  private List<User> userList;
 
-    private int age;
+  private int age;
 
-    private boolean sex;
+  private boolean sex;
 
-    public String getUserName() {
-        return userName;
-    }
+  public String getUserName() {
+    return userName;
+  }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
 
-    public String getPhone() {
-        return phone;
-    }
+  public String getPhone() {
+    return phone;
+  }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
 
-    public List<User> getUserList() {
-        return userList;
-    }
+  public List<User> getUserList() {
+    return userList;
+  }
 
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
-    }
+  public void setUserList(List<User> userList) {
+    this.userList = userList;
+  }
 
-    public int getAge() {
-        return age;
-    }
+  public int getAge() {
+    return age;
+  }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+  public void setAge(int age) {
+    this.age = age;
+  }
 
-    public boolean isSex() {
-        return sex;
-    }
+  public boolean isSex() {
+    return sex;
+  }
 
-    public void setSex(boolean sex) {
-        this.sex = sex;
-    }
+  public void setSex(boolean sex) {
+    this.sex = sex;
+  }
 }

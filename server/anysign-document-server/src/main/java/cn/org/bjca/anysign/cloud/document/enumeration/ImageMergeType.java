@@ -16,16 +16,20 @@ import lombok.Setter;
  ***************************************************************************/
 public enum ImageMergeType {
 
-    /** 横向*/
-    HORIZONTAL(1),
-    /** 纵向*/
-    VERTICAL(2);
+  /**
+   * 横向
+   */
+  HORIZONTAL(1),
+  /**
+   * 纵向
+   */
+  VERTICAL(2);
 
-    @Getter
-    @Setter
-    private int typeCode;
+  @Getter
+  @Setter
+  private int typeCode;
 
-    ImageMergeType(int typeCode){
-        this.setTypeCode(typeCode);
-    }
+  ImageMergeType(int typeCode) {
+    this.setTypeCode(typeCode);
+  }
 }

@@ -1,8 +1,6 @@
 package cn.org.bjca.anysign.cloud.document.service;
 
 import cn.org.bjca.anysign.cloud.document.bean.DocumentFormatBean;
-
-import java.io.IOException;
 import java.util.List;
 
 /***************************************************************************
@@ -18,52 +16,45 @@ import java.util.List;
  ***************************************************************************/
 public interface IDocumentFormatService {
 
-    /**
-     * <p>PDF格式化为图片</p>
-     *
-     * @param documentFormatBean 格式化对象Bean
-     * @return
-     */
-    byte[] pdf2Img(DocumentFormatBean documentFormatBean);
+  /**
+   * <p>PDF格式化为图片</p>
+   *
+   * @param documentFormatBean 格式化对象Bean
+   */
+  byte[] pdf2Img(DocumentFormatBean documentFormatBean);
 
-    /**
-     * <p>PDF格式化为图片列表</p>
-     *
-     * @param documentFormatBean 格式化对象Bean
-     * @return
-     */
-    List<byte[]> pdf2ImgList(DocumentFormatBean documentFormatBean);
+  /**
+   * <p>PDF格式化为图片列表</p>
+   *
+   * @param documentFormatBean 格式化对象Bean
+   */
+  List<byte[]> pdf2ImgList(DocumentFormatBean documentFormatBean);
 
-    /**
-     * <p>Html 文档转换Pdf</p>
-     *
-     * @param documentFormatBean 格式化对象Bean
-     * @return
-     * @throws IOException
-     */
-    byte[] html2Pdf(DocumentFormatBean documentFormatBean);
+  /**
+   * <p>Html 文档转换Pdf</p>
+   *
+   * @param documentFormatBean 格式化对象Bean
+   */
+  byte[] html2Pdf(DocumentFormatBean documentFormatBean);
 
-    /**
-     * <p>Word文档转换Pdf</p>
-     *
-     * @param documentFormatBean 格式化对象Bean
-     * @return
-     */
-    byte[] word2Pdf(DocumentFormatBean documentFormatBean);
+  /**
+   * <p>Word文档转换Pdf</p>
+   *
+   * @param documentFormatBean 格式化对象Bean
+   */
+  byte[] word2Pdf(DocumentFormatBean documentFormatBean);
 
-    /**
-     * <p>Image文档转换Pdf</p>
-     *
-     * @param documentFormatBean 格式化对象Bean
-     * @return
-     */
-    byte[] img2Pdf(DocumentFormatBean documentFormatBean);
+  /**
+   * <p>Image文档转换Pdf</p>
+   *
+   * @param documentFormatBean 格式化对象Bean
+   */
+  byte[] img2Pdf(DocumentFormatBean documentFormatBean);
 
-    /**
-     * <p>合并PDF</p>
-     *
-     * @param pdfBtyList PDF文档Bty列表
-     * @return
-     */
-    byte[] mergePdf(List<byte[]> pdfBtyList);
+  /**
+   * <p>合并PDF</p>
+   *
+   * @param pdfBtyList PDF文档Bty列表
+   */
+  byte[] mergePdf(List<byte[]> pdfBtyList);
 }

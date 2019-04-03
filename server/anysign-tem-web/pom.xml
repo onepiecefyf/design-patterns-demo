@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>server</artifactId>
-        <groupId>cn.org.bjca.anysign</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>server</artifactId>
+    <groupId>cn.org.bjca.anysign</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>anysign-tem-web</artifactId>
+  <artifactId>anysign-tem-web</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap</artifactId>
-            <!--<version>4.1.3</version>-->
-            <version>3.3.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>jquery</artifactId>
-            <version>3.3.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>angularjs</artifactId>
-            <version>1.7.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>angular-ui-bootstrap</artifactId>
-            <version>1.3.3</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.webjars.bower/fontawesome -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>fontawesome</artifactId>
-            <version>4.7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>nprogress</artifactId>
-            <version>0.2.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.webjars.bower/animate.css -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>animate.css</artifactId>
-            <version>3.5.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-        </dependency>
+  <dependencies>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>bootstrap</artifactId>
+      <!--<version>4.1.3</version>-->
+      <version>3.3.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>jquery</artifactId>
+      <version>3.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>angularjs</artifactId>
+      <version>1.7.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>angular-ui-bootstrap</artifactId>
+      <version>1.3.3</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.webjars.bower/fontawesome -->
+    <dependency>
+      <groupId>org.webjars.bower</groupId>
+      <artifactId>fontawesome</artifactId>
+      <version>4.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>nprogress</artifactId>
+      <version>0.2.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.webjars.bower/animate.css -->
+    <dependency>
+      <groupId>org.webjars.bower</groupId>
+      <artifactId>animate.css</artifactId>
+      <version>3.5.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+    </dependency>
 
 
-        <dependency>
-            <groupId>cn.org.bjca.anysign</groupId>
-            <artifactId>anysign-global-tools</artifactId>
-            <version>${product.version}</version>
-        </dependency>
+    <dependency>
+      <groupId>cn.org.bjca.anysign</groupId>
+      <artifactId>anysign-global-tools</artifactId>
+      <version>${product.version}</version>
+    </dependency>
 
-        <dependency>
-            <groupId>cn.org.bjca.anysign</groupId>
-            <artifactId>anysign-seal-service</artifactId>
-            <version>${product.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.org.bjca.anysign</groupId>
-            <artifactId>anysign-server-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+    <dependency>
+      <groupId>cn.org.bjca.anysign</groupId>
+      <artifactId>anysign-seal-service</artifactId>
+      <version>${product.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>cn.org.bjca.anysign</groupId>
+      <artifactId>anysign-server-common</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
 
-    </dependencies>
+  </dependencies>
 
 </project>

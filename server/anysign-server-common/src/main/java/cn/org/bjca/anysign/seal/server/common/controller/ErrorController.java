@@ -2,10 +2,9 @@ package cn.org.bjca.anysign.seal.server.common.controller;
 
 import cn.org.bjca.anysign.seal.global.tools.constant.StatusConstants;
 import cn.org.bjca.anysign.seal.server.common.message.BaseResponse;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
 
 /***************************************************************************
  * <pre>404异常处理类</pre>
@@ -22,21 +21,21 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class ErrorController implements org.springframework.boot.autoconfigure.web.ErrorController {
 
-    @RequestMapping(value = "/error")
-    public BaseResponse defaultError(HttpServletRequest request, Exception e) {
-        Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
-        if (statusCode == 404) {
-            return new BaseResponse(StatusConstants.ERROR_404_STATUS, e.getMessage());
-        } else {
-            return new BaseResponse(StatusConstants.ERROR_5XX_STATUS, e.getMessage());
-        }
+  @RequestMapping(value = "/error")
+  public BaseResponse defaultError(HttpServletRequest request, Exception e) {
+    Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
+    if (statusCode == 404) {
+      return new BaseResponse(StatusConstants.ERROR_404_STATUS, e.getMessage());
+    } else {
+      return new BaseResponse(StatusConstants.ERROR_5XX_STATUS, e.getMessage());
     }
+  }
 
 
-    @Override
-    public String getErrorPath() {
-        return "/error";
-    }
+  @Override
+  public String getErrorPath() {
+    return "/error";
+  }
 
 
 }

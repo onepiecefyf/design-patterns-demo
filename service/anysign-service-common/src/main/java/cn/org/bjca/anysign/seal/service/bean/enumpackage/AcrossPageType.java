@@ -6,6 +6,6 @@ package cn.org.bjca.anysign.seal.service.bean.enumpackage;
  * @description
  */
 public enum AcrossPageType {
-    SINGLE_PAGE,
-    MULTI_PAGE
+  SINGLE_PAGE,
+  MULTI_PAGE
 }

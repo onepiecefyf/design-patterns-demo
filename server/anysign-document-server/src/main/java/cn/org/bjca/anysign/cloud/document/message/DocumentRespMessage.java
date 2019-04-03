@@ -15,37 +15,43 @@ import java.io.Serializable;
  ***************************************************************************/
 public class DocumentRespMessage implements Serializable {
 
-    /** 交易参考号*/
-    private String transId;
+  /**
+   * 交易参考号
+   */
+  private String transId;
 
-    /** 文件ID*/
-    private String fileId;
+  /**
+   * 文件ID
+   */
+  private String fileId;
 
-    /** 文件内容Base64*/
-    private String fileContent;
+  /**
+   * 文件内容Base64
+   */
+  private String fileContent;
 
-    public String getTransId() {
-        return transId;
-    }
+  public String getTransId() {
+    return transId;
+  }
 
-    public void setTransId(String transId) {
-        this.transId = transId;
-    }
+  public void setTransId(String transId) {
+    this.transId = transId;
+  }
 
-    public String getFileId() {
-        return fileId;
-    }
+  public String getFileId() {
+    return fileId;
+  }
 
-    public void setFileId(String fileId) {
-        this.fileId = fileId;
-    }
+  public void setFileId(String fileId) {
+    this.fileId = fileId;
+  }
 
-    public String getFileContent() {
-        return fileContent;
-    }
+  public String getFileContent() {
+    return fileContent;
+  }
 
-    public void setFileContent(String fileContent) {
-        this.fileContent = fileContent;
-    }
+  public void setFileContent(String fileContent) {
+    this.fileContent = fileContent;
+  }
 
 }

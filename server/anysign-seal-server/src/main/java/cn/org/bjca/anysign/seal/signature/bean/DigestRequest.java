@@ -17,48 +17,49 @@ import lombok.Data;
  ***************************************************************************/
 @Data
 public class DigestRequest extends BaseRequest {
-    /**
-     * 交易参考号
-     */
-    private String transId;
 
-    /**
-     * 文档传输类型
-     */
-    private FileTransmissionType fileTransmissionType;
+  /**
+   * 交易参考号
+   */
+  private String transId;
 
-    /**
-     * 请求文件下载token
-     */
-    private String requestFileToken;
+  /**
+   * 文档传输类型
+   */
+  private FileTransmissionType fileTransmissionType;
 
-    /**
-     * 请求文件id
-     */
-    private String requestFileId;
+  /**
+   * 请求文件下载token
+   */
+  private String requestFileToken;
 
-    /**
-     * 文件base64编码
-     */
-    private String requestFileContent;
+  /**
+   * 请求文件id
+   */
+  private String requestFileId;
 
-    /**
-     * 文件归属组
-     */
-    private String group;
+  /**
+   * 文件base64编码
+   */
+  private String requestFileContent;
 
-    /**
-     * 文件归属用户
-     */
-    private String user;
+  /**
+   * 文件归属组
+   */
+  private String group;
 
-    /**
-     * 文件有效期
-     */
-    private int expire;
+  /**
+   * 文件归属用户
+   */
+  private String user;
 
-    /**
-     * 签章规则实体-seal
-     */
-    private Seal seal;
+  /**
+   * 文件有效期
+   */
+  private int expire;
+
+  /**
+   * 签章规则实体-seal
+   */
+  private Seal seal;
 }

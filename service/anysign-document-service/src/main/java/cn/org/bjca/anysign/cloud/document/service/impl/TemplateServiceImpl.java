@@ -21,15 +21,15 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class TemplateServiceImpl implements IDocxTemplateService {
 
-    /**
-     * <p>docx模板填充</p>
-     * @param fillTemplateBean 模板填充Bean
-     * @return
-     */
-    @Override
-    public byte[] docxTemplateFill(FillTemplateBean fillTemplateBean) {
-        DocxTemplateTool tool = new DocxTemplateTool();
-        return tool.xmlParse(fillTemplateBean.getDocxBty(), fillTemplateBean.getXmlBty(),
-                fillTemplateBean.getImageAppearanceBeanList());
-    }
+  /**
+   * <p>docx模板填充</p>
+   *
+   * @param fillTemplateBean 模板填充Bean
+   */
+  @Override
+  public byte[] docxTemplateFill(FillTemplateBean fillTemplateBean) {
+    DocxTemplateTool tool = new DocxTemplateTool();
+    return tool.xmlParse(fillTemplateBean.getDocxBty(), fillTemplateBean.getXmlBty(),
+        fillTemplateBean.getImageAppearanceBeanList());
+  }
 }

@@ -6,8 +6,8 @@ package cn.org.bjca.anysign.seal.service.bean.enumpackage;
  * @description
  */
 public enum RelativePositionType {
-    CENTER,
-    LOWER,
-    RIGHT,
-    LOWER_RIGHT
+  CENTER,
+  LOWER,
+  RIGHT,
+  LOWER_RIGHT
 }

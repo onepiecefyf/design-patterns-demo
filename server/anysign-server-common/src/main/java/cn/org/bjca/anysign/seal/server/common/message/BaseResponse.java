@@ -1,7 +1,6 @@
 package cn.org.bjca.anysign.seal.server.common.message;
 
 import cn.org.bjca.anysign.seal.global.tools.constant.StatusConstants;
-
 import java.io.Serializable;
 
 /***************************************************************************
@@ -16,79 +15,77 @@ import java.io.Serializable;
  * @创建人： july_whj
  * @创建时间：2018/9/5 16:21
  ***************************************************************************/
-public class BaseResponse  implements Serializable {
+public class BaseResponse implements Serializable {
 
-    /**
-     * 响应码 (*)
-     */
-    private int status;
+  /**
+   * 响应码 (*)
+   */
+  private int status;
 
-    /**
-     * 响应信息 (*)
-     */
-    private String message;
+  /**
+   * 响应信息 (*)
+   */
+  private String message;
 
-    /**
-     * 错误堆栈信息
-     */
-    private String trace;
+  /**
+   * 错误堆栈信息
+   */
+  private String trace;
 
-    /**
-     * 枚举构造
-     * @param statusConstants 状态枚举类
-     * @param trace 异常寨
-     */
-    public BaseResponse(StatusConstants statusConstants, String trace) {
-        this.status = Integer.parseInt(statusConstants.getStatus());
-        this.message = statusConstants.getMessage();
-        this.trace = trace;
-    }
+  /**
+   * 枚举构造
+   *
+   * @param statusConstants 状态枚举类
+   * @param trace 异常寨
+   */
+  public BaseResponse(StatusConstants statusConstants, String trace) {
+    this.status = Integer.parseInt(statusConstants.getStatus());
+    this.message = statusConstants.getMessage();
+    this.trace = trace;
+  }
 
-    /**
-     * 枚举构造
-     * @param statusConstants
-     */
-    public BaseResponse(StatusConstants statusConstants) {
-        this.status = Integer.parseInt(statusConstants.getStatus());
-        this.message = statusConstants.getMessage();
-    }
+  /**
+   * 枚举构造
+   */
+  public BaseResponse(StatusConstants statusConstants) {
+    this.status = Integer.parseInt(statusConstants.getStatus());
+    this.message = statusConstants.getMessage();
+  }
 
-    /**
-     * 自定义构造
-     *
-     * @param status 无系统编码
-     * @param message
-     * @param trace
-     */
-    public BaseResponse(String status, String message, String trace) {
-        this.status = Integer.parseInt(status);
-        this.message = message;
-        this.trace = trace;
-    }
+  /**
+   * 自定义构造
+   *
+   * @param status 无系统编码
+   */
+  public BaseResponse(String status, String message, String trace) {
+    this.status = Integer.parseInt(status);
+    this.message = message;
+    this.trace = trace;
+  }
 
 
-    public int getStatus() {
-        return status;
-    }
+  public int getStatus() {
+    return status;
+  }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
+  public void setStatus(int status) {
+    this.status = status;
+  }
 
-    public String getMessage() {
-        return message;
-    }
+  public String getMessage() {
+    return message;
+  }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+  public void setMessage(String message) {
+    this.message = message;
+  }
 
-    public String getTrace() {
-        return trace;
-    }
+  public String getTrace() {
+    return trace;
+  }
 
-    public void setTrace(String trace) {
-        this.trace = trace;
-    }
+  public void setTrace(String trace) {
+    this.trace = trace;
+  }
 
 }

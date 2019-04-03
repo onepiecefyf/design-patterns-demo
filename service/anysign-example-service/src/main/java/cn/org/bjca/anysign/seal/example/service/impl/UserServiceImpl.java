@@ -20,10 +20,10 @@ import org.springframework.stereotype.Service;
  * @创建时间：2018/9/9 17:31
  ***************************************************************************/
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements IUserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
-    @Override
-    public User getByAccount(@Param("account") String account) {
-        return baseMapper.getByAccount(account);
-    }
+  @Override
+  public User getByAccount(@Param("account") String account) {
+    return baseMapper.getByAccount(account);
+  }
 }

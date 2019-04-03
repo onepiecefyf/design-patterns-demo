@@ -1,8 +1,8 @@
 package cn.org.bjca.anysign.seal.web.controller;
 
+import cn.org.bjca.anysign.seal.global.tools.constant.StatusConstants;
 import cn.org.bjca.anysign.seal.moulage.bean.TemplateBean;
 import cn.org.bjca.anysign.seal.moulage.convert.ITemplateService;
-import cn.org.bjca.anysign.seal.global.tools.constant.StatusConstants;
 import cn.org.bjca.anysign.seal.server.common.message.BaseResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -33,47 +33,47 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class TemplateController {
 
-    @Autowired
-    private ITemplateService templateService;
+  @Autowired
+  private ITemplateService templateService;
 
-    @ApiOperation(value = "刷新模板信息", produces = MediaType.APPLICATION_JSON_VALUE,
-            httpMethod = "GET", notes = "刷新模板信息")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "appId", value = "appId", dataType = "string", paramType = "query")})
-    @RequestMapping("/refresh")
-    public BaseResponse templateRefresh() {
-        templateService.templateRefresh();
-        log.info("templateRefresh successful ...");
-        return new BaseResponse(StatusConstants.SUCCESS);
-    }
+  @ApiOperation(value = "刷新模板信息", produces = MediaType.APPLICATION_JSON_VALUE,
+      httpMethod = "GET", notes = "刷新模板信息")
+  @ApiImplicitParams({
+      @ApiImplicitParam(name = "appId", value = "appId", dataType = "string", paramType = "query")})
+  @RequestMapping("/refresh")
+  public BaseResponse templateRefresh() {
+    templateService.templateRefresh();
+    log.info("templateRefresh successful ...");
+    return new BaseResponse(StatusConstants.SUCCESS);
+  }
 
-    @RequestMapping(value = "/templatePersistence", consumes = "application/json;charset=utf-8")
-    @ApiOperation(value = "持久化模板数据", produces = MediaType.APPLICATION_JSON_VALUE,
-            httpMethod = "POST", notes = "持久化模板数据")
-    public BaseResponse templatePersistence(@RequestBody TemplateBean templateBean) {
-        templateService.templatePersistence(templateBean);
-        log.info("templatePersistence successful ...");
-        return new BaseResponse(StatusConstants.SUCCESS);
-    }
+  @RequestMapping(value = "/templatePersistence", consumes = "application/json;charset=utf-8")
+  @ApiOperation(value = "持久化模板数据", produces = MediaType.APPLICATION_JSON_VALUE,
+      httpMethod = "POST", notes = "持久化模板数据")
+  public BaseResponse templatePersistence(@RequestBody TemplateBean templateBean) {
+    templateService.templatePersistence(templateBean);
+    log.info("templatePersistence successful ...");
+    return new BaseResponse(StatusConstants.SUCCESS);
+  }
 
-    @ApiOperation(value = "根据模板ID删除模板信息", produces = MediaType.APPLICATION_JSON_VALUE,
-            httpMethod = "GET", notes = "根据模板ID删除模板信息")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "appId", value = "appId", dataType = "string", paramType = "query"),
-            @ApiImplicitParam(name = "temId", value = "temId", dataType = "string", paramType = "query")})
-    @RequestMapping("/delByTemId")
-    public BaseResponse delTemplateById(String temId) {
-        templateService.delTemplateById(temId);
-        log.info("delTemplateById successful ...");
-        return new BaseResponse(StatusConstants.SUCCESS);
-    }
+  @ApiOperation(value = "根据模板ID删除模板信息", produces = MediaType.APPLICATION_JSON_VALUE,
+      httpMethod = "GET", notes = "根据模板ID删除模板信息")
+  @ApiImplicitParams({
+      @ApiImplicitParam(name = "appId", value = "appId", dataType = "string", paramType = "query"),
+      @ApiImplicitParam(name = "temId", value = "temId", dataType = "string", paramType = "query")})
+  @RequestMapping("/delByTemId")
+  public BaseResponse delTemplateById(String temId) {
+    templateService.delTemplateById(temId);
+    log.info("delTemplateById successful ...");
+    return new BaseResponse(StatusConstants.SUCCESS);
+  }
 
-    @RequestMapping(value = "/updateTemplateById", consumes = "application/json;charset=utf-8")
-    @ApiOperation(value = "更新模板数据", produces = MediaType.APPLICATION_JSON_VALUE,
-            httpMethod = "POST", notes = "更新模板数据")
-    public BaseResponse updateTemplateById(@RequestBody TemplateBean templateBean) {
-        templateService.updateTemplateById(templateBean);
-        log.info("updateTemplateById successful ...");
-        return new BaseResponse(StatusConstants.SUCCESS);
-    }
+  @RequestMapping(value = "/updateTemplateById", consumes = "application/json;charset=utf-8")
+  @ApiOperation(value = "更新模板数据", produces = MediaType.APPLICATION_JSON_VALUE,
+      httpMethod = "POST", notes = "更新模板数据")
+  public BaseResponse updateTemplateById(@RequestBody TemplateBean templateBean) {
+    templateService.updateTemplateById(templateBean);
+    log.info("updateTemplateById successful ...");
+    return new BaseResponse(StatusConstants.SUCCESS);
+  }
 }

@@ -3,13 +3,10 @@ package cn.org.bjca.anysign.seal.service.bean.base;
 import cn.org.bjca.anysign.seal.global.tools.utils.Base64Utils;
 import cn.org.bjca.anysign.seal.global.tools.utils.HMacUtils;
 import cn.org.bjca.anysign.seal.global.tools.utils.SortedMapUtils;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
-
 import java.io.Serializable;
 import java.util.Map;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 /***************************************************************************
  * <pre>公共请求参数</pre>
@@ -28,34 +25,34 @@ import java.util.Map;
 public class CommonRequestParam implements Serializable {
 
 
-    protected String version = "1.0";
+  protected String version = "1.0";
 
-    protected String signAlgo;
+  protected String signAlgo;
 
-    protected String signature;
+  protected String signature;
 
-    protected String deviceId;
+  protected String deviceId;
 
-    protected String appId;
-    /**
-     * 业务流水
-     */
-    protected String transId;
+  protected String appId;
+  /**
+   * 业务流水
+   */
+  protected String transId;
 
 
-    /**
-     * 参数签名
-     *
-     * @param param 参数值
-     * @param key   签名密钥
-     * @return 签名值
-     */
-    protected String generateSignature(Map<String, String> param, String key) {
-        SortedMapUtils sortedMapUtils = new SortedMapUtils(param);
-        String signValue = sortedMapUtils.toString();
-        byte[] bytes = HMacUtils.sha256_HMAC(signValue, key);
-        return Base64Utils.byte2Base64StringFun(bytes);
-    }
+  /**
+   * 参数签名
+   *
+   * @param param 参数值
+   * @param key 签名密钥
+   * @return 签名值
+   */
+  protected String generateSignature(Map<String, String> param, String key) {
+    SortedMapUtils sortedMapUtils = new SortedMapUtils(param);
+    String signValue = sortedMapUtils.toString();
+    byte[] bytes = HMacUtils.sha256_HMAC(signValue, key);
+    return Base64Utils.byte2Base64StringFun(bytes);
+  }
 
 
 }

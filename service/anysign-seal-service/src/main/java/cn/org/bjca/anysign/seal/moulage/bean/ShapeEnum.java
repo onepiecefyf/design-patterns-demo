@@ -12,5 +12,5 @@ package cn.org.bjca.anysign.seal.moulage.bean;
  * @创建时间：2018/5/22 10:14
  ***************************************************************************/
 public enum ShapeEnum {
-    ellipse, circle, rectangle , square
+  ellipse, circle, rectangle, square
 }

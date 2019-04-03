@@ -1,9 +1,8 @@
 package cn.org.bjca.anysign.seal.moulage.bean;
 
+import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.io.Serializable;
 
 /***************************************************************************
  * <pre>附文信息</pre>
@@ -18,47 +17,48 @@ import java.io.Serializable;
  * @创建时间：2018/9/29 16:48
  ***************************************************************************/
 public class RiderBean implements Serializable {
-    /**
-     * 附文(*)
-     */
-    @Setter
-    @Getter
-    private String appendixContent;
-    /**
-     * 弧度(*)
-     */
-    @Setter
-    @Getter
-    private String radian;
-    /**
-     * 加粗(*)
-     */
-    @Setter
-    @Getter
-    private String fontWeight;
-    /**
-     * 字体大小(*)
-     */
-    @Setter
-    @Getter
-    private float fontSize;
-    /**
-     * 字体
-     */
-    @Setter
-    @Getter
-    private String fontFamily;
-    /**
-     * 颜色
-     */
-    @Setter
-    @Getter
-    private String color;
 
-    /**
-     * 顺序
-     */
-    @Setter
-    @Getter
-    private String order;
+  /**
+   * 附文(*)
+   */
+  @Setter
+  @Getter
+  private String appendixContent;
+  /**
+   * 弧度(*)
+   */
+  @Setter
+  @Getter
+  private String radian;
+  /**
+   * 加粗(*)
+   */
+  @Setter
+  @Getter
+  private String fontWeight;
+  /**
+   * 字体大小(*)
+   */
+  @Setter
+  @Getter
+  private float fontSize;
+  /**
+   * 字体
+   */
+  @Setter
+  @Getter
+  private String fontFamily;
+  /**
+   * 颜色
+   */
+  @Setter
+  @Getter
+  private String color;
+
+  /**
+   * 顺序
+   */
+  @Setter
+  @Getter
+  private String order;
 }

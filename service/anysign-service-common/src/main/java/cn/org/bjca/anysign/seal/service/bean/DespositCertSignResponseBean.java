@@ -1,9 +1,8 @@
 package cn.org.bjca.anysign.seal.service.bean;
 
+import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.io.Serializable;
 
 /**
  * @author zjgao
@@ -14,10 +13,10 @@ import java.io.Serializable;
 @Setter
 public class DespositCertSignResponseBean implements Serializable {
 
-    private String signValue;
-    private String cert;
-    private String transId;
-    private String requestId;
+  private String signValue;
+  private String cert;
+  private String transId;
+  private String requestId;
 
 }
 

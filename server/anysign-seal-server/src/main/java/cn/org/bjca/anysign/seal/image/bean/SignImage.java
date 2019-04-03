@@ -3,7 +3,6 @@ package cn.org.bjca.anysign.seal.image.bean;
 import cn.org.bjca.anysign.seal.moulage.bean.Template;
 import cn.org.bjca.anysign.seal.server.common.message.BaseRequest;
 import cn.org.bjca.anysign.seal.service.bean.enumpackage.FileTransmissionType;
-
 import java.io.Serializable;
 
 /***************************************************************************
@@ -18,90 +17,91 @@ import java.io.Serializable;
  * @创建人： july_whj
  * @创建时间：2018/9/7 14:03
  ***************************************************************************/
-public class SignImage extends BaseRequest implements Serializable{
-    /**
-     * 交易参考号
-     */
-    private String transId;
-    /**
-     * fileTransmissionType(*)
-     */
-    private FileTransmissionType fileTransmissionType;
-    /**
-     * 文件归属组
-     */
-    private String group;
+public class SignImage extends BaseRequest implements Serializable {
 
-    /**
-     * 文件归属用户
-     */
-    private String user;
-    /**
-     * 文件有效期
-     */
-    private Integer expire;
-    /**
-     * 印模实体
-     */
-    private Moulage moulage;
-    /**
-     * 模板对象
-     */
-    private Template template;
+  /**
+   * 交易参考号
+   */
+  private String transId;
+  /**
+   * fileTransmissionType(*)
+   */
+  private FileTransmissionType fileTransmissionType;
+  /**
+   * 文件归属组
+   */
+  private String group;
 
-    public Template getTemplate() {
-        return template;
-    }
+  /**
+   * 文件归属用户
+   */
+  private String user;
+  /**
+   * 文件有效期
+   */
+  private Integer expire;
+  /**
+   * 印模实体
+   */
+  private Moulage moulage;
+  /**
+   * 模板对象
+   */
+  private Template template;
 
-    public void setTemplate(Template template) {
-        this.template = template;
-    }
+  public Template getTemplate() {
+    return template;
+  }
 
-    public String getTransId() {
-        return transId;
-    }
+  public void setTemplate(Template template) {
+    this.template = template;
+  }
 
-    public void setTransId(String transId) {
-        this.transId = transId;
-    }
+  public String getTransId() {
+    return transId;
+  }
 
-    public FileTransmissionType getFileTransmissionType() {
-        return fileTransmissionType;
-    }
+  public void setTransId(String transId) {
+    this.transId = transId;
+  }
 
-    public void setFileTransmissionType(FileTransmissionType fileTransmissionType) {
-        this.fileTransmissionType = fileTransmissionType;
-    }
+  public FileTransmissionType getFileTransmissionType() {
+    return fileTransmissionType;
+  }
 
-    public String getGroup() {
-        return group;
-    }
+  public void setFileTransmissionType(FileTransmissionType fileTransmissionType) {
+    this.fileTransmissionType = fileTransmissionType;
+  }
 
-    public void setGroup(String group) {
-        this.group = group;
-    }
+  public String getGroup() {
+    return group;
+  }
 
-    public String getUser() {
-        return user;
-    }
+  public void setGroup(String group) {
+    this.group = group;
+  }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
+  public String getUser() {
+    return user;
+  }
 
-    public Integer getExpire() {
-        return expire;
-    }
+  public void setUser(String user) {
+    this.user = user;
+  }
 
-    public void setExpire(Integer expire) {
-        this.expire = expire;
-    }
+  public Integer getExpire() {
+    return expire;
+  }
 
-    public Moulage getMoulage() {
-        return moulage;
-    }
+  public void setExpire(Integer expire) {
+    this.expire = expire;
+  }
 
-    public void setMoulage(Moulage moulage) {
-        this.moulage = moulage;
-    }
+  public Moulage getMoulage() {
+    return moulage;
+  }
+
+  public void setMoulage(Moulage moulage) {
+    this.moulage = moulage;
+  }
 }

@@ -13,31 +13,35 @@ import cn.org.bjca.anysign.seal.global.tools.constant.StatusConstants;
  * @创建人： july_whj
  * @创建时间：2018/9/6 11:44
  ***************************************************************************/
-public class ErrorResponse extends BaseResponse{
-    /**
-     * 错误信息
-     * @param statusConstants 返回状态码
-     * @param trace 异常信息
-     */
-    public ErrorResponse(StatusConstants statusConstants, String trace) {
-        super(statusConstants, trace);
-    }
+public class ErrorResponse extends BaseResponse {
 
-    /**
-     * 错误信息
-     * @param statusConstants 返回状态码
-     */
-    public ErrorResponse(StatusConstants statusConstants) {
-        super(statusConstants);
-    }
+  /**
+   * 错误信息
+   *
+   * @param statusConstants 返回状态码
+   * @param trace 异常信息
+   */
+  public ErrorResponse(StatusConstants statusConstants, String trace) {
+    super(statusConstants, trace);
+  }
 
-    /**
-     * 错误信息
-     * @param status 状态码（无系统编码）
-     * @param message 错误信息
-     * @param trace 异常信息
-     */
-    public ErrorResponse(String status, String message, String trace) {
-        super(status, message, trace);
-    }
+  /**
+   * 错误信息
+   *
+   * @param statusConstants 返回状态码
+   */
+  public ErrorResponse(StatusConstants statusConstants) {
+    super(statusConstants);
+  }
+
+  /**
+   * 错误信息
+   *
+   * @param status 状态码（无系统编码）
+   * @param message 错误信息
+   * @param trace 异常信息
+   */
+  public ErrorResponse(String status, String message, String trace) {
+    super(status, message, trace);
+  }
 }

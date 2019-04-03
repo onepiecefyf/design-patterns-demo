@@ -12,5 +12,5 @@ package cn.org.bjca.anysign.seal.moulage.bean;
  * @创建时间：2018/5/22 10:15
  ***************************************************************************/
 public enum FontWeightEnum {
-    bold, normal
+  bold, normal
 }

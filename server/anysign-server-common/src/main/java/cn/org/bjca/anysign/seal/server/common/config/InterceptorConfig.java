@@ -23,19 +23,20 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class InterceptorConfig extends WebMvcConfigurerAdapter {
 
-    @Bean
-    public HandlerInterceptor getInterceptor(){
-        return new HttpParamInterceptor();
-    }
+  @Bean
+  public HandlerInterceptor getInterceptor() {
+    return new HttpParamInterceptor();
+  }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        // addPathPatterns 用于添加拦截规则, 这里假设拦截 /url 后面的全部链接
-        registry.addInterceptor(getInterceptor())
-                .addPathPatterns("/**")
-                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**","/configuration/**");
-        registry.addInterceptor(new TraceIdInterceptor());
-        super.addInterceptors(registry);
-    }
+  @Override
+  public void addInterceptors(InterceptorRegistry registry) {
+    // addPathPatterns 用于添加拦截规则, 这里假设拦截 /url 后面的全部链接
+    registry.addInterceptor(getInterceptor())
+        .addPathPatterns("/**")
+        .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**",
+            "/swagger-ui.html/**", "/configuration/**");
+    registry.addInterceptor(new TraceIdInterceptor());
+    super.addInterceptors(registry);
+  }
 
 }

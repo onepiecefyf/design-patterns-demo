@@ -1,12 +1,9 @@
 package cn.org.bjca.anysign.seal.verify.bean;
 
 import cn.org.bjca.seal.esspdf.itext.bean.VerifyMessage;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.io.Serializable;
 import java.util.List;
+import lombok.Data;
 
 /**
  * @author zjgao
@@ -15,6 +12,7 @@ import java.util.List;
  */
 @Data
 public class SignatureVerifyResponse implements Serializable {
-    private String transId = null;
-    private List<VerifyMessage> verifyMessages =null;
+
+  private String transId = null;
+  private List<VerifyMessage> verifyMessages = null;
 }

@@ -13,43 +13,43 @@ import java.io.Serializable;
  * @创建人： july_whj
  * @创建时间：2018/9/7 14:08
  ***************************************************************************/
-public class SignImageMessage implements Serializable{
+public class SignImageMessage implements Serializable {
 
-    /**
-     * 交易参考号
-     */
-    private String transId;
+  /**
+   * 交易参考号
+   */
+  private String transId;
 
-    /**
-     * 生成图片路径
-     */
-    private String fileId;
-    /**
-     * 生成图片BASE64
-     */
-    private String sealContent;
+  /**
+   * 生成图片路径
+   */
+  private String fileId;
+  /**
+   * 生成图片BASE64
+   */
+  private String sealContent;
 
-    public String getTransId() {
-        return transId;
-    }
+  public String getTransId() {
+    return transId;
+  }
 
-    public void setTransId(String transId) {
-        this.transId = transId;
-    }
+  public void setTransId(String transId) {
+    this.transId = transId;
+  }
 
-    public String getFileId() {
-        return fileId;
-    }
+  public String getFileId() {
+    return fileId;
+  }
 
-    public void setFileId(String fileId) {
-        this.fileId = fileId;
-    }
+  public void setFileId(String fileId) {
+    this.fileId = fileId;
+  }
 
-    public String getSealContent() {
-        return sealContent;
-    }
+  public String getSealContent() {
+    return sealContent;
+  }
 
-    public void setSealContent(String sealContent) {
-        this.sealContent = sealContent;
-    }
+  public void setSealContent(String sealContent) {
+    this.sealContent = sealContent;
+  }
 }

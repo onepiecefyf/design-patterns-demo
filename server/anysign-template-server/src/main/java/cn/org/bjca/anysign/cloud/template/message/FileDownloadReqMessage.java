@@ -1,7 +1,6 @@
 package cn.org.bjca.anysign.cloud.template.message;
 
 import cn.org.bjca.anysign.seal.server.common.message.BaseRequest;
-
 import java.io.Serializable;
 
 /***************************************************************************
@@ -17,25 +16,29 @@ import java.io.Serializable;
  ***************************************************************************/
 public class FileDownloadReqMessage extends BaseRequest implements Serializable {
 
-    /** 文件ID*/
-    private String id;
+  /**
+   * 文件ID
+   */
+  private String id;
 
-    /** 文件授权访问token*/
-    private String token;
+  /**
+   * 文件授权访问token
+   */
+  private String token;
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public String getToken() {
-        return token;
-    }
+  public String getToken() {
+    return token;
+  }
 
-    public void setToken(String token) {
-        this.token = token;
-    }
+  public void setToken(String token) {
+    this.token = token;
+  }
 }

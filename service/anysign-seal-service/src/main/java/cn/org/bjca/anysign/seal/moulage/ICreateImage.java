@@ -16,25 +16,24 @@ import cn.org.bjca.anysign.seal.moulage.bean.TemplateBean;
  ***************************************************************************/
 public interface ICreateImage {
 
-    /**
-     * 根据模板创建印模
-     * @param templateBean 模板对象
-     * @return
-     */
-    byte[] creatrImage(TemplateBean templateBean);
+  /**
+   * 根据模板创建印模
+   *
+   * @param templateBean 模板对象
+   */
+  byte[] creatrImage(TemplateBean templateBean);
 
-    /**
-     * 根据模板创建印模
-     * @param templateBean 模板对象
-     * @param dpi 分辨率
-     * @return
-     */
-    byte[] creatrImage(TemplateBean templateBean,int dpi);
+  /**
+   * 根据模板创建印模
+   *
+   * @param templateBean 模板对象
+   * @param dpi 分辨率
+   */
+  byte[] creatrImage(TemplateBean templateBean, int dpi);
 
-    /**
-     * 校验函数
-     * @param templateBean
-     */
-    void verification(TemplateBean templateBean);
+  /**
+   * 校验函数
+   */
+  void verification(TemplateBean templateBean);
 
 }

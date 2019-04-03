@@ -1,8 +1,8 @@
 package cn.org.bjca.anysign.template.controller;
 
-import cn.org.bjca.anysign.seal.moulage.bean.TemplateBean;
-import cn.org.bjca.anysign.seal.moulage.ICreateImage;
 import cn.org.bjca.anysign.seal.global.tools.utils.Base64Utils;
+import cn.org.bjca.anysign.seal.moulage.ICreateImage;
+import cn.org.bjca.anysign.seal.moulage.bean.TemplateBean;
 import cn.org.bjca.anysign.seal.server.common.message.ObjectRestResponse;
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,14 +26,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("template/v1")
 public class TemplateController {
 
-    @Autowired
-    private ICreateImage createImage;
+  @Autowired
+  private ICreateImage createImage;
 
-    @RequestMapping("/image")
-    public ObjectRestResponse<String> createImage(@RequestBody TemplateBean templateBean) {
-        System.out.println(JSON.toJSONString(templateBean));
-        byte[] bytes = createImage.creatrImage(templateBean);
-        return new ObjectRestResponse(Base64Utils.byte2Base64StringFun(bytes));
-    }
+  @RequestMapping("/image")
+  public ObjectRestResponse<String> createImage(@RequestBody TemplateBean templateBean) {
+    System.out.println(JSON.toJSONString(templateBean));
+    byte[] bytes = createImage.creatrImage(templateBean);
+    return new ObjectRestResponse(Base64Utils.byte2Base64StringFun(bytes));
+  }
 
 }

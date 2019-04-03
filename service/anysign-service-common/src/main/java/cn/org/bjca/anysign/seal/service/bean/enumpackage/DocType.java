@@ -11,14 +11,14 @@ package cn.org.bjca.anysign.seal.service.bean.enumpackage;
  * @创建人： july_whj
  * @创建时间：2018/9/12 11:15
  ***************************************************************************/
-public enum  DocType {
-    XML,
-    JSON,
-    HTML,
-    WORD,
-    PDF,
-    JPG,
-    GIF,
-    PNG,
-    TIFF
+public enum DocType {
+  XML,
+  JSON,
+  HTML,
+  WORD,
+  PDF,
+  JPG,
+  GIF,
+  PNG,
+  TIFF
 }
