@@ -1,0 +1,11 @@
+stages:
+- build
+build_master:
+  image: maven
+  stage: build
+  script:
+  - mvn clean verify -Denv=dev -DskipTests org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar -Dsonar.projectKey=${CI_PROJECT_NAME}:${CI_PROJECT_ID} -Dsonar.links.homepage=${CI_PROJECT_URL} -Dsonar.projectName=${CI_PROJECT_NAME} -Dsonar.host.url=http://192.168.126.182:9000
+  only:
+  - master
+  tags:
+  - sonar
