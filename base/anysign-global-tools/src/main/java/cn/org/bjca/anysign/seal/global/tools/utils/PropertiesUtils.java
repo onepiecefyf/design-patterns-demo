@@ -50,7 +50,9 @@ public class PropertiesUtils {
       e.printStackTrace();
     } finally {
       try {
-        inputStream.close();
+        if (inputStream != null) {
+          inputStream.close();
+        }
       } catch (IOException e) {
 
       }

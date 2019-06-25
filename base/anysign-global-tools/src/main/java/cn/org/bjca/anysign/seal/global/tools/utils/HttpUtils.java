@@ -201,6 +201,15 @@ public class HttpUtils {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    finally {
+      if (!isNull(httpclient)){
+        try {
+          httpclient.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    }
     return result;
   }
 
@@ -224,6 +233,14 @@ public class HttpUtils {
       }
     } catch (IOException e) {
       e.printStackTrace();
+    }finally {
+      if (!isNull(httpclient)){
+        try {
+          httpclient.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     return result;
   }
@@ -254,19 +271,16 @@ public class HttpUtils {
     } catch (IOException e) {
       log.error("http 请求异常 ！", e);
     } finally {
-      if (resp != null) {
-        try {
+      try{
+        if (resp != null)  {
           EntityUtils.consume(resp.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
     return response;
@@ -421,19 +435,16 @@ public class HttpUtils {
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      if (response != null) {
-        try {
+      try{
+        if (response != null)  {
           EntityUtils.consume(response.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
     return httpStr;
@@ -471,19 +482,16 @@ public class HttpUtils {
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      if (resp != null) {
-        try {
+      try{
+        if (resp != null)  {
           EntityUtils.consume(resp.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
     return response;
@@ -503,19 +511,16 @@ public class HttpUtils {
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      if (response != null) {
-        try {
+      try{
+        if (response != null)  {
           EntityUtils.consume(response.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
   }
@@ -539,19 +544,16 @@ public class HttpUtils {
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      if (resp != null) {
-        try {
+      try{
+        if (resp != null)  {
           EntityUtils.consume(resp.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
     return httpStr;
@@ -573,19 +575,16 @@ public class HttpUtils {
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      if (response != null) {
-        try {
+      try{
+        if (response != null)  {
           EntityUtils.consume(response.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
     return httpStr;
@@ -615,19 +614,16 @@ public class HttpUtils {
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      if (resp != null) {
-        try {
+      try{
+        if (resp != null)  {
           EntityUtils.consume(resp.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
     return response;
@@ -654,19 +650,16 @@ public class HttpUtils {
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
-      if (resp != null) {
-        try {
+      try{
+        if (resp != null)  {
           EntityUtils.consume(resp.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
     return response;
@@ -686,19 +679,16 @@ public class HttpUtils {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      if (resp != null) {
-        try {
+      try{
+        if (resp != null)  {
           EntityUtils.consume(resp.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
   }
@@ -727,20 +717,16 @@ public class HttpUtils {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      if (resp != null) {
-        try {
+      try{
+        if (resp != null)  {
           EntityUtils.consume(resp.getEntity());
-          resp.close();
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
     return jsonObject;
@@ -769,19 +755,16 @@ public class HttpUtils {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      if (resp != null) {
-        try {
+      try{
+        if (resp != null)  {
           EntityUtils.consume(resp.getEntity());
-        } catch (IOException e) {
-          e.printStackTrace();
+        }
+        if (!isNull(httpClient)){
+          httpClient.close();
         }
       }
-      if (!isNull(httpClient)){
-        try {
-          httpClient.close();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+      catch (IOException e) {
+        e.printStackTrace();
       }
     }
     return jsonObject;

@@ -1,5 +1,7 @@
 package cn.org.bjca.anysign.seal.moulage.convert;
 
+import static java.util.Objects.isNull;
+
 import cn.org.bjca.anysign.seal.global.tools.constant.StatusConstants;
 import cn.org.bjca.anysign.seal.global.tools.constant.SystemConstants;
 import cn.org.bjca.anysign.seal.global.tools.exception.BaseRuntimeException;
@@ -165,7 +167,9 @@ public class FileTemplateService implements ITemplateService {
       throw new BaseRuntimeException(StatusConstants.PERSISTENCE_ERROR);
     } finally {
       try {
-        out.close();
+        if(!isNull(out)) {
+          out.close();
+        }
       } catch (IOException ignored) {
       }
     }
@@ -194,7 +198,9 @@ public class FileTemplateService implements ITemplateService {
       throw new BaseRuntimeException(StatusConstants.PERSISTENCE_ERROR);
     } finally {
       try {
-        in.close();
+        if(in != null) {
+          in.close();
+        }
       } catch (IOException e) {
       }
     }
@@ -240,9 +246,10 @@ public class FileTemplateService implements ITemplateService {
     File file = new File(FILEPATH);
     //考虑到编码格式
     InputStreamReader read = null;
+    BufferedReader bufferedReader = null;
     try {
       read = new InputStreamReader(new FileInputStream(file), SystemConstants.ENCODING);
-      BufferedReader bufferedReader = new BufferedReader(read);
+      bufferedReader = new BufferedReader(read);
       String line;
       while ((line = bufferedReader.readLine()) != null) {
         if (line.startsWith(FILE_SEPARATOR)) {
@@ -257,7 +264,12 @@ public class FileTemplateService implements ITemplateService {
       e.printStackTrace();
     } finally {
       try {
-        read.close();
+        if(!isNull(read)) {
+          read.close();
+        }
+        if(!isNull(bufferedReader)){
+          bufferedReader.close();
+        }
       } catch (IOException e) {
       }
     }

@@ -1,5 +1,7 @@
 package cn.org.bjca.anysign.seal.moulage.tools;
 
+import static java.util.Objects.isNull;
+
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -56,7 +58,9 @@ public class PngDPIProcessor {
         writer.write(metadata, new IIOImage(image, null, metadata), writeParam);
       } finally {
         try {
-          stream.close();
+          if(!isNull(stream)) {
+            stream.close();
+          }
         } catch (IOException e) {
         }
       }

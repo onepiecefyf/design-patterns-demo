@@ -1,5 +1,7 @@
 package cn.org.bjca.anysign.seal.moulage.template.impl;
 
+import static java.util.Objects.isNull;
+
 import cn.org.bjca.anysign.seal.global.tools.constant.StatusConstants;
 import cn.org.bjca.anysign.seal.global.tools.exception.BaseRuntimeException;
 import cn.org.bjca.anysign.seal.moulage.bean.TemplateBean;
@@ -52,7 +54,9 @@ public class TemplateImpression extends BaseImpression {
       throw new BaseRuntimeException(StatusConstants.IMAGE_ERROR, null, "生成印章");
     } finally {
       try {
-        bin.close();
+        if(!isNull(bin)) {
+          bin.close();
+        }
       } catch (IOException ignored) {
       }
       try {
