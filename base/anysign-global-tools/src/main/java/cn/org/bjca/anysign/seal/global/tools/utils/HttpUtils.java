@@ -1,5 +1,7 @@
 package cn.org.bjca.anysign.seal.global.tools.utils;
 
+import static java.util.Objects.isNull;
+
 import cn.org.bjca.anysign.seal.global.tools.constant.StatusConstants;
 import cn.org.bjca.anysign.seal.global.tools.exception.BaseRuntimeException;
 import com.alibaba.fastjson.JSONObject;
@@ -108,6 +110,14 @@ public class HttpUtils {
       e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
+    }finally {
+      if (!isNull(client)){
+        try {
+          client.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     return null;
   }
@@ -141,6 +151,15 @@ public class HttpUtils {
       e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
+    }
+    finally {
+      if (!isNull(client)){
+        try {
+          client.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     return null;
   }
@@ -238,6 +257,13 @@ public class HttpUtils {
       if (resp != null) {
         try {
           EntityUtils.consume(resp.getEntity());
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
         } catch (IOException e) {
           e.printStackTrace();
         }
@@ -402,6 +428,13 @@ public class HttpUtils {
           e.printStackTrace();
         }
       }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     return httpStr;
   }
@@ -445,6 +478,13 @@ public class HttpUtils {
           e.printStackTrace();
         }
       }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     return response;
   }
@@ -466,6 +506,13 @@ public class HttpUtils {
       if (response != null) {
         try {
           EntityUtils.consume(response.getEntity());
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
         } catch (IOException e) {
           e.printStackTrace();
         }
@@ -499,6 +546,13 @@ public class HttpUtils {
           e.printStackTrace();
         }
       }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     return httpStr;
   }
@@ -522,6 +576,13 @@ public class HttpUtils {
       if (response != null) {
         try {
           EntityUtils.consume(response.getEntity());
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
         } catch (IOException e) {
           e.printStackTrace();
         }
@@ -561,6 +622,13 @@ public class HttpUtils {
           e.printStackTrace();
         }
       }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     return response;
   }
@@ -593,6 +661,13 @@ public class HttpUtils {
           e.printStackTrace();
         }
       }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     return response;
   }
@@ -614,6 +689,13 @@ public class HttpUtils {
       if (resp != null) {
         try {
           EntityUtils.consume(resp.getEntity());
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
         } catch (IOException e) {
           e.printStackTrace();
         }
@@ -653,6 +735,13 @@ public class HttpUtils {
           e.printStackTrace();
         }
       }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     return jsonObject;
   }
@@ -683,6 +772,13 @@ public class HttpUtils {
       if (resp != null) {
         try {
           EntityUtils.consume(resp.getEntity());
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+      if (!isNull(httpClient)){
+        try {
+          httpClient.close();
         } catch (IOException e) {
           e.printStackTrace();
         }

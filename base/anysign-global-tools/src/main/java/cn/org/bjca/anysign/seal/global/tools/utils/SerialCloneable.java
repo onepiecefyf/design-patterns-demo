@@ -29,6 +29,7 @@ public class SerialCloneable implements Cloneable, Serializable {
    */
   @Override
   public Object clone() {
+    Object ret = null;
     try {
       // save the object to a byte array
       ByteArrayOutputStream bout = new ByteArrayOutputStream();
@@ -38,13 +39,13 @@ public class SerialCloneable implements Cloneable, Serializable {
       // read a clone of the object from the byte array
       ByteArrayInputStream bin = new ByteArrayInputStream(bout.toByteArray());
       ObjectInputStream in = new ObjectInputStream(bin);
-      Object ret = in.readObject();
+      ret = in.readObject();
       in.close();
-      return ret;
+
     } catch (Exception e) {
       log.error("SerialCloneable clone is fail ! ", e);
-      return null;
     }
+    return ret;
   }
 
 }

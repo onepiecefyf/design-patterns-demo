@@ -3,6 +3,7 @@ package cn.org.bjca.anysign.seal.service.impl;
 
 import static cn.org.bjca.anysign.seal.global.tools.constant.SystemConstants.DATATYPE_HASH;
 import static cn.org.bjca.anysign.seal.global.tools.utils.CertUtil.getCertKeyType;
+import static java.util.Objects.isNull;
 
 import cn.org.bjca.anysign.components.bean.ESSPdfConstants;
 import cn.org.bjca.anysign.pki.MessageDigest.MessageDigest;
@@ -319,7 +320,9 @@ public class SealServiceImpl implements ISealService {
     }
     // 移动类型1:重叠、2: 居下、3:居右,默认居,右、
     //客户端上送枚举值从0开始入参需枚举值+1
-    pdfSign.setMoveType(String.valueOf(relativePositionType.ordinal() + 1));
+    if(!isNull(relativePositionType)) {
+      pdfSign.setMoveType(String.valueOf(relativePositionType.ordinal() + 1));
+    }
     // 上下偏移
     pdfSign.setHeightMoveSize(yOffset);
     // 左右偏移
@@ -1041,7 +1044,9 @@ public class SealServiceImpl implements ISealService {
       }
       // 移动类型1:重叠、2: 居下、3:居右,默认居右、4:居右下
       //客户端上送枚举值从0开始入参需枚举值+1
-      pdfSign.setMoveType(String.valueOf(relativePositionType.ordinal() + 1));
+      if(!isNull(relativePositionType)) {
+        pdfSign.setMoveType(String.valueOf(relativePositionType.ordinal() + 1));
+      }
       // 上下偏移
       pdfSign.setHeightMoveSize(yOffset);
       // 左右偏移
