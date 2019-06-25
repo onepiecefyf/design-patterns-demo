@@ -126,7 +126,7 @@ public class SealServiceImpl implements ISealService {
       if (FileTransmissionType.PATH.ordinal() == fileTransmissionType.ordinal()) {
         DownloadRequestBean downloadRequestBean = DownloadRequestBean
             .build(httpConfig.appId, httpConfig.deviceId,
-                httpConfig.version, signature, seal.getSealPicId(), seal.getSealPicToken(),
+                httpConfig.version, httpConfig.secret, seal.getSealPicId(), seal.getSealPicToken(),
                 transId);
         byte[] sealPicContent = systemRequestService.download(downloadRequestBean);
         seal.setSealPicContent(Base64Utils.byte2Base64StringFun(sealPicContent));
