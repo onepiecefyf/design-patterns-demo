@@ -42,7 +42,7 @@ public class MetricsNamePoint {
 
   public static void main(String[] args) {
     MetricsNamePoint metricsNamePoint = new MetricsNamePoint(
-        "http://127.0.0.1:10501/template/v1/docGeneration");
+        "http://127.0.0.1:10501/");
     System.out.println(metricsNamePoint.getFirstName());
     System.out.println(metricsNamePoint.getSecondName());
     System.out.println(metricsNamePoint.getThirdName());

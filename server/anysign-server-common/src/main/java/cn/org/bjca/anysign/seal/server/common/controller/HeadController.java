@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HeadController {
 
-  @RequestMapping(value = "/head")
+  @RequestMapping(value = "/")
   public String head() {
     return "200";
   }
