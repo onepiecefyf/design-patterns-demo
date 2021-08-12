@@ -71,18 +71,6 @@
       <version>1.18.12</version>
       <scope>provided</scope>
     </dependency>
-    <!-- 解决存储敏感数据加解密问题-->
-    <dependency>
-      <groupId>org.apache.shardingsphere</groupId>
-      <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
-      <version>4.1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.shardingsphere</groupId>
-      <artifactId>sharding-jdbc-spring-namespace</artifactId>
-      <version>4.1.1</version>
-    </dependency>
-
   </dependencies>
 
   <build>
