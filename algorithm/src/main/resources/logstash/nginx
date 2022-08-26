@@ -1,0 +1,19 @@
+URIPARM1 [A-Za-z0-9$.+!*'|(){},~@#%&/=:;^\\_<>`?\-\[\]]*
+
+URIPATH1 (?:/[\\A-Za-z0-9$.+!*'(){},~:;=@#% \[\]_<>^\-&?]*)+
+
+HOSTNAME1 \b(?:[0-9A-Za-z_\-][0-9A-Za-z-_\-]{0,62})(?:\.(?:[0-9A-Za-z_\-][0-9A-Za-z-:\-_]{0,62}))*(\.?|\b)
+
+STATUS ([0-9.]{0,3}[, ]{0,2})+
+
+HOSTPORT1 (%{IPV4}:%{POSINT}[, ]{0,2})+
+
+FORWORD (?:%{IPV4}[,]?[ ]?)+|%{WORD}
+
+URIPARM [A-Za-z0-9$.+!*'|(){},~@#%&/=:;_?\-\[\]]*
+
+URIPATH (?:/[A-Za-z0-9$.+!*'(){},~:;=@#%&_\- ]*)+
+
+URI1 (%{URIPROTO}://)?(?:%{USER}(?::[^@]*)?@)?(?:%{URIHOST})?(?:%{URIPATHPARAM})?
+
+NGINX_ACCESS %{IPORHOST:remote_addr} - (%{GREEDYDATA:remote_user}|-) \[%{TIMESTAMP_ISO8601:timestamp}\] (?:%{HOSTPORT1:request_uri}|-) %{WORD:request_method} \"%{URIPATH1:uri}\" \"%{URIPARM1:param}\" %{BASE10NUM:http_status} (?:%{BASE10NUM:body_bytes_sent}|-) \"(?:%{URIPARM1:http_referer}|-)\" %{BASE10NUM:upstream_status} (?:%{HOSTPORT1:upstream_addr}|-) (%{BASE16FLOAT:request_time}|-) (%{BASE16FLOAT:upstream_response_time}|-) \"(%{GREEDYDATA:user_agent}|-)\" \"(?:%{GREEDYDATA:x_forword_for}|-)\"

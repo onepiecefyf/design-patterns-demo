@@ -1,0 +1,1 @@
+BUSINESS %{TIMESTAMP_ISO8601:timestamp}%{SPACE}*%{WORD:level}%{SPACE}*%{NUMBER:pid}%{SPACE}*---%{SPACE}*\[%{DATA:thread}\]%{SPACE}*\[%{DATA:trace_id}\]%{SPACE}*%{DATA:classpath}%{SPACE}*:%{SPACE}*%{GREEDYDATA:message}%{SPACE}*

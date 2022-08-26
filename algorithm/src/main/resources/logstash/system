@@ -1,0 +1,2 @@
+SYSTEM %{TIMESTAMP_ISO8601:syslog_timestamp} %{IPORHOST:remote_ip} %{WORD:hostname} %{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\]): %{GREEDYDATA:syslog_message}
+SYSTEM_KAFKA %{TIMESTAMP_ISO8601:syslog_timestamp} %{IPORHOST:remote_ip} %{WORD:hostname} %{DATA:syslog_program}: %{GREEDYDATA:syslog_message}

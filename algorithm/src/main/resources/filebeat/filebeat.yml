@@ -1,0 +1,83 @@
+###################### Filebeat Configuration  #########################
+
+#=========================== Filebeat prospectors =============================
+
+filebeat.prospectors:
+
+# 采集业务日志
+  - type: log
+    enabled: true
+    paths:
+      - /home/footstone/logs/bjca-app-microservices-platform-server/all.log
+    multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    multiline.negate: true
+    multiline.match: after
+    multiline.max_lines: 1000
+    #exclude_lines: ['^'] # 忽略的日志
+    #exclude_files: ['\.gz$'] # 忽略采集的文件
+    fields:
+      log_topic: businessTopic
+    backoff: "1s" # Filebeat检测到某个文件到了EOF之后，每次等待多久再去检测文件是否有更新，默认为1s
+    tail_files: true # 从尾部开始读取日志
+
+# 采集nginx日志
+  - type: log
+    enabled: true
+    paths:
+      - /home/footstone/openresty/nginx/logs/microservices-platform.access.log
+    multiline.pattern: '^\d{0,3}\.\d{0,3}\.\d{0,3}\.\d{0,3}'
+    multiline.negate: true
+    multiline.match: after
+    multiline.max_lines: 1000
+    fields:
+      log_topic: nginxTopic
+    backoff: "1s" # Filebeat检测到某个文件到了EOF之后，每次等待多久再去检测文件是否有更新，默认为1s
+    tail_files: true # 从尾部开始读取日志
+
+# 采集系统日志
+  - type: log
+    enabled: true
+    paths:
+      - /data/rsyslog/*/*.log
+    multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+    multiline.negate: true
+    multiline.match: after
+    multiline.max_lines: 1000
+    fields:
+      log_topic: systemTopic
+    backoff: "1s" # Filebeat检测到某个文件到了EOF之后，每次等待多久再去检测文件是否有更新，默认为1s
+    tail_files: true # 从尾部开始读取日志
+
+#============================= Filebeat modules ===============================
+
+filebeat.config.modules:
+  # Glob pattern for configuration loading
+  path: ${path.config}/modules.d/*.yml
+
+  # Set to true to enable config reloading
+  reload.enabled: false
+
+  # Period on which files under path should be checked for changes
+  #reload.period: 10s
+
+#==================== Elasticsearch template setting ==========================
+
+setup.template.settings:
+  index.number_of_shards: 3
+  #index.codec: best_compression
+  #_source.enabled: false
+
+  #================================ Outputs =====================================
+
+output.kafka:
+  codec.format:
+    string: '%{[@timestamp]} %{[message]}'
+  enabled: true
+  hosts: ["10.0.4.2:9092"]
+  topic: '%{[fields.log_topic]}'
+  partition.round_robin:
+    reachable_only: true
+  keep_alive: 10s # 连接的存活时间.如果为0,表示短连,发送完就关闭.默认为0秒.
+  required_acks: 1 # ACK的可靠等级.0=无响应,1=等待本地消息,-1=等待所有副本提交.默认1.
+  compression: gzip # 开启gzip压缩，提升效率
+  max_message_bytes: 1000000 # 消息最大字节数，10M

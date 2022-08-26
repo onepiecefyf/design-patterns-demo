@@ -1,0 +1,14 @@
+/var/log/weblog/*.log {
+    daily  //指定转储周期为每天
+    compress  //通过gzip 压缩转储以后的日志
+    rotate 7  //保存7天的日志
+    missingok  //如果日志文件丢失，不要显示错误
+    notifempty  //当日志文件为空时，不进行轮转
+    dateext  //使用当期日期作为命名格式，exp: nginx_access.log-20190120
+    sharedscripts  //运行postrotate脚本
+    postrotate  //执行的指令
+            if [ -f /run/nginx.pid ]; then
+                    kill -USR1 `cat /run/nginx.pid`
+            fi
+    endscript  //结束指令
+}

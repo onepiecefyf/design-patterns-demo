@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    expose: "true"
+    app: uams-consumer
+    provider: uams
+    version: 3.7.3
+    group: cn.bjca.uams
+  name: uams-consumer-service
+  namespace: default
+spec:
+  ports:
+  - name: http
+    nodePort: 30176
+    port: 80
+    protocol: TCP
+    targetPort: 9091
+  selector:
+    app: uams-consumer
+    provider: uams
+    group: cn.bjca.uams
+  type: NodePort
